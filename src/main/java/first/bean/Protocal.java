@@ -10,5 +10,8 @@ public class Protocal {
 
     public short code;
 
+    public short lenth;
+    
     public Object probuffer;
+
 }

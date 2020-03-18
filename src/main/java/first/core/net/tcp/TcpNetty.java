@@ -1,4 +1,4 @@
-package first.core.net;
+package first.core.net.tcp;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -25,7 +25,9 @@ public class TcpNetty {
                     .childHandler(new ChannelInitializer<SocketChannel>() { // (4)
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
+                            ch.pipeline().addLast(new DecoderHandler());
                             ch.pipeline().addLast(new DiscardServerHandler());
+                            ch.pipeline().addLast(new EncoderHandler());
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG, 128)          // (5)

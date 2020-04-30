@@ -1,4 +1,5 @@
 package first.core.net.tcp;
+import first.core.net.http.HttpServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -8,14 +9,13 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
-import static second.Define.tcpPort;
 /*
  *创建者: zsq
  *创建时间:2020/3/16 20:18
  */
 
 public class TcpNetty {
-    public static void initTcpNetty() {
+    public static void initTcpNetty(int tcpPort) {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup(4);
         try {
@@ -42,4 +42,5 @@ public class TcpNetty {
             bossGroup.shutdownGracefully();
         }
     }
+
 }

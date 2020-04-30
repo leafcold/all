@@ -16,6 +16,7 @@ public class DecoderHandler extends ByteToMessageDecoder {
 
     @Override
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> list) throws Exception {
+        MLOG.info("当前消息时间{}",System.currentTimeMillis());
         if (byteBuf.readableBytes() < 4) {
             MLOG.info("当前消息有问题直接丢弃");
             return;

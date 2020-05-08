@@ -76,7 +76,7 @@ public class Main {
             Channel ch = b.bind(0).sync().channel();
 
             ch.writeAndFlush(new DatagramPacket(
-                    Unpooled.copiedBuffer("来自客户端:南无本师释迦牟尼佛", CharsetUtil.UTF_8),
+                    Unpooled.copiedBuffer("来自客户端:南无本师释迦dd牟尼佛", CharsetUtil.UTF_8),
                     new InetSocketAddress("127.0.0.1", 12310))).sync();
 
             ch.closeFuture().await();

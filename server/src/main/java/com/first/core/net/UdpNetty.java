@@ -9,5 +9,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioDatagramChannel;
 import io.netty.bootstrap.Bootstrap;
 public class UdpNetty {
+    public static void main(String[] args) {
+        System.out.println("测试git");
+    }
 
 }

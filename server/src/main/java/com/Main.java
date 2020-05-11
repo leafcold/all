@@ -1,6 +1,5 @@
 package com;
 
-import first.business.Test;
 import first.core.log.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +12,6 @@ import static first.core.context.Context.initBeans;
 import static first.core.net.http.HttpNetty.initHttpNetty;
 import static first.core.net.tcp.TcpNetty.initTcpNetty;
 import static first.core.net.udp.UdpKcp.initUdpNetty;
-import static first.http.HttpDemo.readFileByLines;
 import static second.Define.*;
 import static second.Define.httpPort;
 
@@ -26,7 +24,7 @@ import static second.Define.httpPort;
  *
  */
 @SpringBootApplication
-@ComponentScan({"first"})
+@ComponentScan({"com.first"})
 public class Main {
     public static void main(String[] args) throws InterruptedException, InvocationTargetException, IllegalAccessException, NoSuchFieldException, NoSuchMethodException {
         //readFileByLines("C:\\Users\\Administrator\\Desktop\\all\\server\\src\\main\\resources\\html\\passwd");

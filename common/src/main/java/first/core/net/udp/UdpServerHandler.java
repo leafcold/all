@@ -24,6 +24,11 @@ public class UdpServerHandler extends SimpleChannelInboundHandler<DatagramPacket
         // 由于数据报的数据是以字符数组传的形式存储的，所以传转数据
         byte[] bytes = json.getBytes("UTF-8");
         DatagramPacket data = new DatagramPacket(Unpooled.copiedBuffer(bytes), packet.sender());
-        ctx.writeAndFlush(data);//向客户端发送消息
+        ctx.channel().writeAndFlush(data);//向客户端发送消息
+        String json1 = "第二个连接";
+        // 由于数据报的数据是以字符数组传的形式存储的，所以传转数据
+        byte[] bytes1 = json1.getBytes("UTF-8");
+        DatagramPacket data1 = new DatagramPacket(Unpooled.copiedBuffer(bytes1), packet.sender());
+        ctx.channel().writeAndFlush(data1);
     }
 }

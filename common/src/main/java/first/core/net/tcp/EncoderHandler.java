@@ -11,8 +11,6 @@ import io.netty.handler.codec.MessageToByteEncoder;
 public class EncoderHandler extends MessageToByteEncoder<Protocal> {
     @Override
     protected void encode(ChannelHandlerContext ctx, Protocal msg, ByteBuf out) {
-        out.writeShort(msg.getCode());
-        out.writeInt(msg.getLength());
-        out.writeBytes(msg.getProbuffer());
+        out.writeBytes(msg.toArray());
     }
 }

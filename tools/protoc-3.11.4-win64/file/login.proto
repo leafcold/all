@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package login;
+
+option java_package = "first.com.protocol.Login";
+option java_outer_classname = "PersonLogin";
+
+message CSPlayerLogin{
+  optional string uid= 1;
+  optional int32 password = 2;
+}
+
+message SCPlayerLogin{
+  repeated int64 playerId = 1;
+}

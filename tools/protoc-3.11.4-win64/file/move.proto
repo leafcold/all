@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package move;
 
-option java_package = "com.protocol.move";
+option java_package = "first.com.protocol.move";
 option java_outer_classname = "PersonMove";
 
 message Person {

@@ -3,8 +3,6 @@ package first.core.net.http;/*
  *创建时间:2020/4/16 17:13
  */
 
-import first.bean.Protocal;
-import first.com.protocol.move.PersonMove;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;

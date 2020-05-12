@@ -1,6 +1,6 @@
 package com;
 
-import first.business.Test;
+import com.first.business.Test;
 import first.core.log.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

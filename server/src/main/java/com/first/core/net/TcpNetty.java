@@ -1,4 +1,4 @@
-package first.core.net;
+package com.first.core.net;
 import com.first.core.net.DiscardServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

@@ -1,4 +1,4 @@
-package first.http;/*
+package com.first.http;/*
  *创建者: zsq
  *创建时间:2020/4/16 23:34
  */
@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static first.core.log.Logger.MLOG;
 
 @Controller
 public class HttpDemo {

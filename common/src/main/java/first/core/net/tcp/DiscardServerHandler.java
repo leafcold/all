@@ -32,8 +32,7 @@ public class DiscardServerHandler  extends ChannelInboundHandlerAdapter {
             Protocal in = (Protocal) msg;
             Pair<Object, Method> objectPair=ContextMap.get(in.getCode());
             Object invokeObject=protoMap.get(((Protocal) msg).getCode()).invoke(null,new Object[]{in.getProbuffer()});
-            objectPair.getValue().invoke(objectPair.getKey(),invokeObject);
-            System.out.println(PersonMove.Person.parseFrom(in.getProbuffer()).getEmail());
+            objectPair.getValue().invoke(objectPair.getKey(),invokeObject,ctx);
         } catch (Exception e){
             e.printStackTrace();
             System.out.println("当前解析失败");

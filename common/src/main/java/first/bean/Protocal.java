@@ -41,7 +41,7 @@ public class Protocal {
         for(int i=0;i<4;i++) {
             bytes[2+i] = (byte)(length >> 8*(3-i));
         }
-        if (length >= 0) System.arraycopy(probuffer, 0, bytes, 6, length);
+           if (length >= 0) System.arraycopy(probuffer, 0, bytes, 6, length);
         return wrappedBuffer(bytes);
     }
 

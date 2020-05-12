@@ -4,5 +4,6 @@ package first.core.invoke;/*
  */
 
 public class Code {
-
+    public final static  short CSPlayerLogin=1;
+    public final static short SCPlayerLogin=2;
 }

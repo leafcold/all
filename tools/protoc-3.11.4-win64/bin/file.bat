@@ -3,5 +3,4 @@
 protoc.exe -I=../file/ --java_out=../../../common/src/main/java/ ../file/move.proto
 protoc.exe -I=../file/ --java_out=../../../common/src/main/java/ ../file/login.proto
 
-java ProtoUtil
 pause

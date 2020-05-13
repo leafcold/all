@@ -25,7 +25,7 @@ import static second.Define.httpPort;
  *
  */
 @SpringBootApplication
-@ComponentScan({"first"})
+@ComponentScan({"com.first"})
 public class Main {
     public static void main(String[] args) throws InterruptedException, InvocationTargetException, IllegalAccessException, NoSuchFieldException, NoSuchMethodException {
         //readFileByLines("C:\\Users\\Administrator\\Desktop\\all\\server\\src\\main\\resources\\html\\passwd");
@@ -33,8 +33,8 @@ public class Main {
         ConfigurableApplicationContext context= application.run(args);
 
         initBeans(context,Main.class);
-        new Thread(Main::tcpNetty,"tcpNetty").start();
-        new Thread(Main::httpNetty,"initHttpNetty").start();
+//        new Thread(Main::tcpNetty,"tcpNetty").start();
+//        new Thread(Main::httpNetty,"initHttpNetty").start();
         new Thread(Main::UDPNetty,"UDPNetty").start();
         Logger.MLOG.info("111");
         Runtime.getRuntime().addShutdownHook(new Thread(){

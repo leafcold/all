@@ -3,21 +3,17 @@ package com.first.business;/*
  *创建时间:2020/3/21 20:40
  */
 
-import com.sun.org.apache.xpath.internal.operations.String;
 import first.bean.Protocal;
 import first.com.protocol.Login.PersonLogin;
 import first.com.protocol.move.PersonMove;
 import first.core.context.FunctionDoName;
-import first.core.invoke.Code;
 import io.netty.channel.ChannelHandlerContext;
 import org.apache.maven.shared.utils.StringUtils;
 import org.springframework.stereotype.Controller;
 
 import java.util.ArrayList;
 
-import static first.core.invoke.Code.CSPlayerLogin;
-import static first.core.invoke.Code.SCPlayerLogin;
-import static first.core.log.Logger.MLOG;
+import static first.core.invoke.Code.*;
 
 
 @Controller
@@ -44,28 +40,33 @@ public class Test {
 
 
     @FunctionDoName(CSPlayerLogin)
-    public void csplayerLogin(PersonLogin.CSPlayerLogin login,ChannelHandlerContext x){
-         if(StringUtils.equals(login.getUid(),"aaa"))
-         {
-             PersonLogin.SCPlayerLogin.Builder scPlayerLogin = PersonLogin.SCPlayerLogin.newBuilder();
-             ArrayList<Long> arrayList=new ArrayList<>();
-             arrayList.add(123L);
-             scPlayerLogin.addAllPlayerId(arrayList);
-             Protocal protocal=new Protocal((short) SCPlayerLogin,scPlayerLogin.build().toByteArray().length,scPlayerLogin.build().toByteArray());
-             x.channel().writeAndFlush(protocal);
-         }
-        if(StringUtils.equals(login.getUid(),"bbb")) {
+    public void csplayerLogin(PersonLogin.CSPlayerLogin login, ChannelHandlerContext x) {
+        if (StringUtils.equals(login.getUid(), "aaa")) {
             PersonLogin.SCPlayerLogin.Builder scPlayerLogin = PersonLogin.SCPlayerLogin.newBuilder();
-            ArrayList<Long> arrayList=new ArrayList<>();
+            ArrayList<Long> arrayList = new ArrayList<>();
+            arrayList.add(123L);
+            scPlayerLogin.addAllPlayerId(arrayList);
+            Protocal protocal = new Protocal((short) SCPlayerLogin, scPlayerLogin.build().toByteArray().length, scPlayerLogin.build().toByteArray());
+            x.channel().writeAndFlush(protocal);
+        }
+        if (StringUtils.equals(login.getUid(), "bbb")) {
+            PersonLogin.SCPlayerLogin.Builder scPlayerLogin = PersonLogin.SCPlayerLogin.newBuilder();
+            ArrayList<Long> arrayList = new ArrayList<>();
             arrayList.add(1234L);
             scPlayerLogin.addAllPlayerId(arrayList);
-            Protocal protocal=new Protocal((short) SCPlayerLogin,scPlayerLogin.build().toByteArray().length,scPlayerLogin.build().toByteArray());
+            Protocal protocal = new Protocal((short) SCPlayerLogin, scPlayerLogin.build().toByteArray().length, scPlayerLogin.build().toByteArray());
             x.channel().writeAndFlush(protocal);
         }
     }
 
-//    @FunctionDoName(1)
-//    public void test(PersonMove.Person person){
-//        MLOG.info("person:{}",person);
-//    }
+    @FunctionDoName(CSPlayerMove)
+    public void csPlayerMove(PersonMove.CSPlayerMove move, ChannelHandlerContext x) {
+
+        PersonMove.SCPlayerMove.Builder sc = PersonMove.SCPlayerMove.newBuilder();
+        sc.setPlayerId(move.getPlayerId());//
+        byte[] bytes = sc.build().toByteArray();
+        Protocal protocal = new Protocal((short) SCPlayerMove, bytes.length, bytes);
+        x.channel().writeAndFlush(protocal);
+        //FIXME 需要转发给房间的所有人
+    }
 }

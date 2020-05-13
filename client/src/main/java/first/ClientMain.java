@@ -4,11 +4,14 @@ package first;/*
  */
 
 import first.bean.Protocal;
+import first.com.protocol.Login.PersonLogin;
 import first.com.protocol.move.PersonMove;
 import first.core.CLientHandler;
 import first.core.TimeClientHandler;
+import first.core.invoke.Code;
 import first.core.net.tcp.DecoderHandler;
 import first.core.net.tcp.EncoderHandler;
+import first.core.net.udp.UDPDecoder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -21,11 +24,15 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.CharsetUtil;
 
 import java.net.InetSocketAddress;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Main {
+import static first.core.invoke.Code.CSPlayerMove;
+import static first.core.invoke.Code.SCPlayerLogin;
+
+public class ClientMain {
     /// tcp
 //    public static void main(String[] args) throws Exception {
 //        String host = "172.16.2.24";
@@ -64,21 +71,30 @@ public class Main {
 //    }
 
 
-   // udp
+    // udp
     public static void main(String[] args) {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             Bootstrap b = new Bootstrap();
             b.group(group)
                     .channel(NioDatagramChannel.class)
-                    .handler(new CLientHandler());
+                    .handler(new ChannelInitializer<Channel>() {
+                        @Override
+                        protected void initChannel(Channel channel) throws Exception {
+                            ChannelPipeline pipeline = channel.pipeline();
+                            pipeline.addLast("udpdecode",new UDPDecoder());
+                            pipeline.addLast("cLientHandler",new CLientHandler());
+                        }
+                    });
 
             Channel ch = b.bind(0).sync().channel();
 
-            ch.writeAndFlush(new DatagramPacket(
-                    Unpooled.copiedBuffer("来自客户端:南无本师释迦dd牟尼佛", CharsetUtil.UTF_8),
-                    new InetSocketAddress("127.0.0.1", 12310))).sync();
-
+            PersonMove.CSPlayerMove.Builder sc = PersonMove.CSPlayerMove.newBuilder();
+            sc.setPlayerId(1L);
+            byte[] bytes = sc.build().toByteArray();
+            Protocal protocal = new Protocal(CSPlayerMove, bytes.length, bytes);
+            ByteBuf msg = protocal.toArray();
+            ch.writeAndFlush(new DatagramPacket(msg, new InetSocketAddress("127.0.0.1", 12310))).sync();
             ch.closeFuture().await();
 
         } catch (Exception e) {

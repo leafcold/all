@@ -2,7 +2,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import first.com.protocol.move.PersonMove;
 
 
-public class Main {
+public class PBMain {
     public static void main(String[] args) throws InvalidProtocolBufferException {
 
 

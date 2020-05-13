@@ -5,32 +5,39 @@ package first.core.net.udp;/*
 
 import first.core.net.tcp.DecoderHandler;
 import first.core.net.tcp.EncoderHandler;
+import first.core.net.udp.demo.LogEventDecoder;
+import first.core.net.udp.demo.LogEventHandler;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioDatagramChannel;
 
+import java.net.InetSocketAddress;
+
 public class UdpKcp {
 
-    public static  void  initUdpNetty() {
-        EventLoopGroup bossGroup=new NioEventLoopGroup();
-        try
-        {
+    public static void initUdpNetty() {
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
+        try {
             //通过NioDatagramChannel创建Channel，并设置Socket参数支持广播
-            //UDP相对于TCP不需要在客户端和服务端建立实际的连接，因此不需要为连接（ChannelPipeline）设置handler
-            Bootstrap b=new Bootstrap();
+            Bootstrap b = new Bootstrap();
             b.group(bossGroup)
                     .channel(NioDatagramChannel.class)
                     .option(ChannelOption.SO_BROADCAST, true)
-                    .handler(new UdpServerHandler());
+                    .handler(new ChannelInitializer<Channel>() {
+                        @Override
+                        protected void initChannel(Channel channel)
+                                throws Exception {
+                            ChannelPipeline pipeline = channel.pipeline();
+                            pipeline.addLast(new UDPDecoder());
+                            pipeline.addLast(new UdpServerHandler());
+                            pipeline.addLast(new UDPEncoder());
+                        }
+                    });
             b.bind(12310).sync().channel().closeFuture().await();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally{
+        } finally {
             bossGroup.shutdownGracefully();
         }
 

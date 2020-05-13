@@ -19,7 +19,6 @@ public class UDPEncoder extends MessageToMessageEncoder<Protocal> {
     @Override
     protected void encode(ChannelHandlerContext ctx, Protocal protocal, List<Object> out) throws Exception {
         ByteBuf byteBuf = protocal.toArray();
-        InetSocketAddress recipient = UDPSenderCache.get(ctx.channel());
-        out.add(new DatagramPacket(byteBuf, recipient));
+        out.add(new DatagramPacket(byteBuf, protocal.getTarget()));
     }
 }

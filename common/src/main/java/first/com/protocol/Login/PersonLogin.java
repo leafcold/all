@@ -48,7 +48,7 @@ public final class PersonLogin {
   }
   /**
    * <pre>
-   * 1
+   *1-登录
    * </pre>
    *
    * Protobuf type {@code login.CSPlayerLogin}
@@ -380,7 +380,7 @@ public final class PersonLogin {
     }
     /**
      * <pre>
-     * 1
+     *1-登录
      * </pre>
      *
      * Protobuf type {@code login.CSPlayerLogin}
@@ -743,7 +743,7 @@ public final class PersonLogin {
   }
   /**
    * <pre>
-   * 2
+   *2-登录返回
    * </pre>
    *
    * Protobuf type {@code login.SCPlayerLogin}
@@ -1038,7 +1038,7 @@ public final class PersonLogin {
     }
     /**
      * <pre>
-     * 2
+     *2-登录返回
      * </pre>
      *
      * Protobuf type {@code login.SCPlayerLogin}

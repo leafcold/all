@@ -9,6 +9,8 @@ package first.bean;/*
 import io.netty.buffer.ByteBuf;
 import lombok.Data;
 
+import java.net.InetSocketAddress;
+
 import static io.netty.buffer.Unpooled.wrappedBuffer;
 
 @Data
@@ -23,6 +25,8 @@ public class Protocal {
     private int length;
 
     private byte[] probuffer;
+
+    private InetSocketAddress target;//接受者
 
     public Protocal(short code,int length, byte[] probuffer){
         this.code=code;

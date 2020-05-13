@@ -29,8 +29,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import static first.core.invoke.Code.CSPlayerMove;
-import static first.core.invoke.Code.SCPlayerLogin;
+import static first.core.invoke.Code.*;
 
 public class ClientMain {
     /// tcp
@@ -82,17 +81,16 @@ public class ClientMain {
                         @Override
                         protected void initChannel(Channel channel) throws Exception {
                             ChannelPipeline pipeline = channel.pipeline();
-                            pipeline.addLast("udpdecode",new UDPDecoder());
                             pipeline.addLast("cLientHandler",new CLientHandler());
                         }
                     });
 
             Channel ch = b.bind(0).sync().channel();
 
-            PersonMove.CSPlayerMove.Builder sc = PersonMove.CSPlayerMove.newBuilder();
-            sc.setPlayerId(1L);
+            PersonMove.CSUDP.Builder sc = PersonMove.CSUDP.newBuilder();
+            sc.setPlayerId(System.currentTimeMillis());
             byte[] bytes = sc.build().toByteArray();
-            Protocal protocal = new Protocal(CSPlayerMove, bytes.length, bytes);
+            Protocal protocal = new Protocal(CSUDP, bytes.length, bytes);
             ByteBuf msg = protocal.toArray();
             ch.writeAndFlush(new DatagramPacket(msg, new InetSocketAddress("127.0.0.1", 12310))).sync();
             ch.closeFuture().await();

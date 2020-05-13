@@ -1,13 +1,20 @@
 package first.core.net.udp;
 
 import first.bean.Protocal;
+import first.com.protocol.move.PersonMove;
+import first.core.invoke.Code;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.handler.codec.MessageToMessageDecoder;
+import javafx.util.Pair;
 
+import java.lang.reflect.Method;
+import java.net.InetSocketAddress;
 import java.util.List;
 
+import static first.core.context.Context.ContextMap;
+import static first.core.context.Context.protoMap;
 import static first.core.log.Logger.MLOG;
 
 public class UDPDecoder extends MessageToMessageDecoder<DatagramPacket> {
@@ -15,7 +22,6 @@ public class UDPDecoder extends MessageToMessageDecoder<DatagramPacket> {
     @Override
     protected void decode(ChannelHandlerContext ctx,
                           DatagramPacket datagramPacket, List<Object> out) throws Exception {
-        UDPSenderCache.put(ctx.channel(), datagramPacket.sender()); //缓存 一个映射
         ByteBuf byteBuf = datagramPacket.content();
         // 直接copy的代码
         if (byteBuf.readableBytes() < 4) {
@@ -47,6 +53,14 @@ public class UDPDecoder extends MessageToMessageDecoder<DatagramPacket> {
         byte[] body = new byte[dataLength];
         byteBuf.readBytes(body);
         Protocal protocal = new Protocal(codeLength, dataLength, body);
+        if(protocal.getCode() == Code.CSUDP){ //TODO 怎么存
+            Pair<Object, Method> objectPair = ContextMap.get(protocal.getCode());
+            Object invokeObject = protoMap.get(((Protocal) protocal).getCode()).invoke(null, new Object[]{protocal.getProbuffer()});
+            PersonMove.CSUDP csudp  = ( PersonMove.CSUDP) invokeObject;
+            long playerId = csudp.getPlayerId();
+            InetSocketAddress sender = datagramPacket.sender();
+            UDPSenderCache.put(playerId,sender);
+        }
         out.add(protocal);
     }
 }

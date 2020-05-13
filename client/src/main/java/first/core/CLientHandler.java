@@ -6,11 +6,12 @@ package first.core;/*
 import first.bean.Protocal;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.channel.socket.DatagramPacket;
 
-public  class CLientHandler extends SimpleChannelInboundHandler<Protocal> {
+public  class CLientHandler extends SimpleChannelInboundHandler<DatagramPacket> {
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Protocal protocal) throws Exception {
-        System.out.println(protocal);
+    protected void channelRead0(ChannelHandlerContext channelHandlerContext, DatagramPacket datagramPacket) throws Exception {
+        System.out.println(datagramPacket);
     }
 }

@@ -7,11 +7,14 @@ import first.bean.Protocal;
 import first.com.protocol.Login.PersonLogin;
 import first.com.protocol.move.PersonMove;
 import first.core.context.FunctionDoName;
+import first.core.net.udp.UDPSenderCache;
 import io.netty.channel.ChannelHandlerContext;
 import org.apache.maven.shared.utils.StringUtils;
 import org.springframework.stereotype.Controller;
 
+import java.net.InetSocketAddress;
 import java.util.ArrayList;
+import java.util.Map;
 
 import static first.core.invoke.Code.*;
 
@@ -66,7 +69,29 @@ public class Test {
         sc.setPlayerId(move.getPlayerId());//
         byte[] bytes = sc.build().toByteArray();
         Protocal protocal = new Protocal((short) SCPlayerMove, bytes.length, bytes);
+        protocal.setTarget(UDPSenderCache.get(move.getPlayerId()));
         x.channel().writeAndFlush(protocal);
         //FIXME 需要转发给房间的所有人
+    }
+
+    @FunctionDoName(CSUDP)
+    public void csUdp(PersonMove.CSUDP csudp, ChannelHandlerContext cx) {
+
+        if(UDPSenderCache.size() >= 2){
+            Map<Long, InetSocketAddress> data = UDPSenderCache.getData();
+            PersonMove.SCUDP.Builder sc = PersonMove.SCUDP.newBuilder();
+            for (Long playerId : data.keySet()) {
+                sc.addPlayerId(playerId);
+            }
+            for (Long playerId : data.keySet()) {
+                InetSocketAddress inetSocketAddress = data.get(playerId);
+                byte[] bytes = sc.build().toByteArray();
+                Protocal protocal = new Protocal((short) SCUDP, bytes.length, bytes);
+                protocal.setTarget(inetSocketAddress);
+                cx.channel().writeAndFlush(protocal);
+            }
+
+        }
+
     }
 }

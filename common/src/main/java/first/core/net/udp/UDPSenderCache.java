@@ -1,7 +1,5 @@
 package first.core.net.udp;
 
-import io.netty.channel.Channel;
-
 import java.net.InetSocketAddress;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,18 +8,26 @@ import java.util.Map;
  * channel的地址
  */
 public class UDPSenderCache {
-     private  static final Map<Channel, InetSocketAddress> senderCache = new HashMap<>();
+     private  static final Map<Long, InetSocketAddress> senderCache = new HashMap<>();
 
-    public static void put(Channel key, InetSocketAddress value) {
+    public static void put(Long key, InetSocketAddress value) {
         senderCache.put(key, value);
 
     }
 
-    public static void remove(Channel key) {
+    public static void remove(Long key) {
         senderCache.remove(key);
     }
 
-    public static InetSocketAddress get(Channel key){
+    public static InetSocketAddress get(Long key){
         return senderCache.get(key);
+    }
+
+    public static int size(){
+        return senderCache.size();
+    }
+
+    public static Map<Long, InetSocketAddress> getData(){
+        return senderCache;
     }
 }

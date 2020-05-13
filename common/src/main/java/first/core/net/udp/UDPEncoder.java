@@ -1,6 +1,7 @@
 package first.core.net.udp;
 
 import first.bean.Protocal;
+import first.bean.UDPProtocal;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.socket.DatagramPacket;
@@ -13,11 +14,11 @@ import java.util.List;
 /**
  * LogEvent 的编码器
  */
-public class UDPEncoder extends MessageToMessageEncoder<Protocal> {
+public class UDPEncoder extends MessageToMessageEncoder<UDPProtocal> {
 
 
     @Override
-    protected void encode(ChannelHandlerContext ctx, Protocal protocal, List<Object> out) throws Exception {
+    protected void encode(ChannelHandlerContext ctx, UDPProtocal protocal, List<Object> out) throws Exception {
         ByteBuf byteBuf = protocal.toArray();
         out.add(new DatagramPacket(byteBuf, protocal.getTarget()));
     }

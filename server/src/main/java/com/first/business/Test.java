@@ -4,6 +4,7 @@ package com.first.business;/*
  */
 
 import first.bean.Protocal;
+import first.bean.UDPProtocal;
 import first.com.protocol.Login.PersonLogin;
 import first.com.protocol.move.PersonMove;
 import first.core.context.FunctionDoName;
@@ -68,10 +69,10 @@ public class Test {
         PersonMove.SCPlayerMove.Builder sc = PersonMove.SCPlayerMove.newBuilder();
         sc.setPlayerId(move.getPlayerId());//
         byte[] bytes = sc.build().toByteArray();
-        Protocal protocal = new Protocal((short) SCPlayerMove, bytes.length, bytes);
-        protocal.setTarget(UDPSenderCache.get(move.getPlayerId()));
-        x.channel().writeAndFlush(protocal);
+        InetSocketAddress inetSocketAddress = UDPSenderCache.getData().get(move.getPlayerId());
+        UDPProtocal protocal = new UDPProtocal((short) SCPlayerMove, bytes.length, bytes,inetSocketAddress);
         //FIXME 需要转发给房间的所有人
+        x.channel().writeAndFlush(protocal);
     }
 
     @FunctionDoName(CSUDP)
@@ -86,8 +87,7 @@ public class Test {
             for (Long playerId : data.keySet()) {
                 InetSocketAddress inetSocketAddress = data.get(playerId);
                 byte[] bytes = sc.build().toByteArray();
-                Protocal protocal = new Protocal((short) SCUDP, bytes.length, bytes);
-                protocal.setTarget(inetSocketAddress);
+                UDPProtocal protocal = new UDPProtocal((short) SCUDP, bytes.length, bytes,inetSocketAddress);
                 cx.channel().writeAndFlush(protocal);
             }
 

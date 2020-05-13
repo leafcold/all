@@ -33,8 +33,8 @@ public class Main {
         ConfigurableApplicationContext context= application.run(args);
 
         initBeans(context,Main.class);
-//        new Thread(Main::tcpNetty,"tcpNetty").start();
-//        new Thread(Main::httpNetty,"initHttpNetty").start();
+        new Thread(Main::tcpNetty,"tcpNetty").start();
+        new Thread(Main::httpNetty,"initHttpNetty").start();
         new Thread(Main::UDPNetty,"UDPNetty").start();
         Logger.MLOG.info("111");
         Runtime.getRuntime().addShutdownHook(new Thread(){

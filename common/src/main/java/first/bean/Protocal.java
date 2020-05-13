@@ -26,7 +26,7 @@ public class Protocal {
 
     private byte[] probuffer;
 
-    private InetSocketAddress target;//接受者
+
 
     public Protocal(short code,int length, byte[] probuffer){
         this.code=code;

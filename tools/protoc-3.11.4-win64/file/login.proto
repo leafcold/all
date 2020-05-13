@@ -5,11 +5,11 @@ package login;
 option java_package = "first.com.protocol.Login";
 option java_outer_classname = "PersonLogin";
 
-message CSPlayerLogin{
+message CSPlayerLogin{ //1-登录
   optional string uid= 1;
   optional int32 password = 2;
 }
 
-message SCPlayerLogin{
+message SCPlayerLogin{ //2-登录返回
   repeated int64 playerId = 1;
 }

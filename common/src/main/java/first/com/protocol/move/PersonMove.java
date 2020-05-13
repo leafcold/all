@@ -2906,6 +2906,2591 @@ public final class PersonMove {
 
   }
 
+  public interface PlayerFPoint3OrBuilder extends
+      // @@protoc_insertion_point(interface_extends:move.PlayerFPoint3)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 x = 1;</code>
+     * @return Whether the x field is set.
+     */
+    boolean hasX();
+    /**
+     * <code>optional int32 x = 1;</code>
+     * @return The x.
+     */
+    int getX();
+
+    /**
+     * <code>optional int32 y = 2;</code>
+     * @return Whether the y field is set.
+     */
+    boolean hasY();
+    /**
+     * <code>optional int32 y = 2;</code>
+     * @return The y.
+     */
+    int getY();
+
+    /**
+     * <code>optional int32 z = 3;</code>
+     * @return Whether the z field is set.
+     */
+    boolean hasZ();
+    /**
+     * <code>optional int32 z = 3;</code>
+     * @return The z.
+     */
+    int getZ();
+  }
+  /**
+   * Protobuf type {@code move.PlayerFPoint3}
+   */
+  public  static final class PlayerFPoint3 extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:move.PlayerFPoint3)
+      PlayerFPoint3OrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PlayerFPoint3.newBuilder() to construct.
+    private PlayerFPoint3(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PlayerFPoint3() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PlayerFPoint3();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PlayerFPoint3(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              z_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              first.com.protocol.move.PersonMove.PlayerFPoint3.class, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int X_FIELD_NUMBER = 1;
+    private int x_;
+    /**
+     * <code>optional int32 x = 1;</code>
+     * @return Whether the x field is set.
+     */
+    public boolean hasX() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional int32 x = 1;</code>
+     * @return The x.
+     */
+    public int getX() {
+      return x_;
+    }
+
+    public static final int Y_FIELD_NUMBER = 2;
+    private int y_;
+    /**
+     * <code>optional int32 y = 2;</code>
+     * @return Whether the y field is set.
+     */
+    public boolean hasY() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional int32 y = 2;</code>
+     * @return The y.
+     */
+    public int getY() {
+      return y_;
+    }
+
+    public static final int Z_FIELD_NUMBER = 3;
+    private int z_;
+    /**
+     * <code>optional int32 z = 3;</code>
+     * @return Whether the z field is set.
+     */
+    public boolean hasZ() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional int32 z = 3;</code>
+     * @return The z.
+     */
+    public int getZ() {
+      return z_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt32(1, x_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt32(2, y_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeInt32(3, z_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, x_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, y_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, z_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof first.com.protocol.move.PersonMove.PlayerFPoint3)) {
+        return super.equals(obj);
+      }
+      first.com.protocol.move.PersonMove.PlayerFPoint3 other = (first.com.protocol.move.PersonMove.PlayerFPoint3) obj;
+
+      if (hasX() != other.hasX()) return false;
+      if (hasX()) {
+        if (getX()
+            != other.getX()) return false;
+      }
+      if (hasY() != other.hasY()) return false;
+      if (hasY()) {
+        if (getY()
+            != other.getY()) return false;
+      }
+      if (hasZ() != other.hasZ()) return false;
+      if (hasZ()) {
+        if (getZ()
+            != other.getZ()) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasX()) {
+        hash = (37 * hash) + X_FIELD_NUMBER;
+        hash = (53 * hash) + getX();
+      }
+      if (hasY()) {
+        hash = (37 * hash) + Y_FIELD_NUMBER;
+        hash = (53 * hash) + getY();
+      }
+      if (hasZ()) {
+        hash = (37 * hash) + Z_FIELD_NUMBER;
+        hash = (53 * hash) + getZ();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(first.com.protocol.move.PersonMove.PlayerFPoint3 prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code move.PlayerFPoint3}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:move.PlayerFPoint3)
+        first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                first.com.protocol.move.PersonMove.PlayerFPoint3.class, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder.class);
+      }
+
+      // Construct using first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        x_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        y_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        z_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_descriptor;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.move.PersonMove.PlayerFPoint3 getDefaultInstanceForType() {
+        return first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public first.com.protocol.move.PersonMove.PlayerFPoint3 build() {
+        first.com.protocol.move.PersonMove.PlayerFPoint3 result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.move.PersonMove.PlayerFPoint3 buildPartial() {
+        first.com.protocol.move.PersonMove.PlayerFPoint3 result = new first.com.protocol.move.PersonMove.PlayerFPoint3(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.x_ = x_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.y_ = y_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.z_ = z_;
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof first.com.protocol.move.PersonMove.PlayerFPoint3) {
+          return mergeFrom((first.com.protocol.move.PersonMove.PlayerFPoint3)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(first.com.protocol.move.PersonMove.PlayerFPoint3 other) {
+        if (other == first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) return this;
+        if (other.hasX()) {
+          setX(other.getX());
+        }
+        if (other.hasY()) {
+          setY(other.getY());
+        }
+        if (other.hasZ()) {
+          setZ(other.getZ());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        first.com.protocol.move.PersonMove.PlayerFPoint3 parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (first.com.protocol.move.PersonMove.PlayerFPoint3) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int x_ ;
+      /**
+       * <code>optional int32 x = 1;</code>
+       * @return Whether the x field is set.
+       */
+      public boolean hasX() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional int32 x = 1;</code>
+       * @return The x.
+       */
+      public int getX() {
+        return x_;
+      }
+      /**
+       * <code>optional int32 x = 1;</code>
+       * @param value The x to set.
+       * @return This builder for chaining.
+       */
+      public Builder setX(int value) {
+        bitField0_ |= 0x00000001;
+        x_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 x = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearX() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        x_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int y_ ;
+      /**
+       * <code>optional int32 y = 2;</code>
+       * @return Whether the y field is set.
+       */
+      public boolean hasY() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional int32 y = 2;</code>
+       * @return The y.
+       */
+      public int getY() {
+        return y_;
+      }
+      /**
+       * <code>optional int32 y = 2;</code>
+       * @param value The y to set.
+       * @return This builder for chaining.
+       */
+      public Builder setY(int value) {
+        bitField0_ |= 0x00000002;
+        y_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 y = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearY() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        y_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int z_ ;
+      /**
+       * <code>optional int32 z = 3;</code>
+       * @return Whether the z field is set.
+       */
+      public boolean hasZ() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional int32 z = 3;</code>
+       * @return The z.
+       */
+      public int getZ() {
+        return z_;
+      }
+      /**
+       * <code>optional int32 z = 3;</code>
+       * @param value The z to set.
+       * @return This builder for chaining.
+       */
+      public Builder setZ(int value) {
+        bitField0_ |= 0x00000004;
+        z_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 z = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearZ() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        z_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:move.PlayerFPoint3)
+    }
+
+    // @@protoc_insertion_point(class_scope:move.PlayerFPoint3)
+    private static final first.com.protocol.move.PersonMove.PlayerFPoint3 DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new first.com.protocol.move.PersonMove.PlayerFPoint3();
+    }
+
+    public static first.com.protocol.move.PersonMove.PlayerFPoint3 getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayerFPoint3>
+        PARSER = new com.google.protobuf.AbstractParser<PlayerFPoint3>() {
+      @java.lang.Override
+      public PlayerFPoint3 parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PlayerFPoint3(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PlayerFPoint3> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PlayerFPoint3> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public first.com.protocol.move.PersonMove.PlayerFPoint3 getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CSPlayerMoveOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:move.CSPlayerMove)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return Whether the playerId field is set.
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return The playerId.
+     */
+    long getPlayerId();
+
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * @return Whether the pos field is set.
+     */
+    boolean hasPos();
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * @return The pos.
+     */
+    first.com.protocol.move.PersonMove.PlayerFPoint3 getPos();
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     */
+    first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder();
+
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     * @return Whether the dir field is set.
+     */
+    boolean hasDir();
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     * @return The dir.
+     */
+    first.com.protocol.move.PersonMove.PlayerFPoint3 getDir();
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     */
+    first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder();
+  }
+  /**
+   * <pre>
+   * 3
+   * </pre>
+   *
+   * Protobuf type {@code move.CSPlayerMove}
+   */
+  public  static final class CSPlayerMove extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:move.CSPlayerMove)
+      CSPlayerMoveOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CSPlayerMove.newBuilder() to construct.
+    private CSPlayerMove(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CSPlayerMove() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CSPlayerMove();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CSPlayerMove(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              first.com.protocol.move.PersonMove.PlayerFPoint3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) != 0)) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(first.com.protocol.move.PersonMove.PlayerFPoint3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 26: {
+              first.com.protocol.move.PersonMove.PlayerFPoint3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) != 0)) {
+                subBuilder = dir_.toBuilder();
+              }
+              dir_ = input.readMessage(first.com.protocol.move.PersonMove.PlayerFPoint3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dir_);
+                dir_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return first.com.protocol.move.PersonMove.internal_static_move_CSPlayerMove_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return first.com.protocol.move.PersonMove.internal_static_move_CSPlayerMove_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              first.com.protocol.move.PersonMove.CSPlayerMove.class, first.com.protocol.move.PersonMove.CSPlayerMove.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private long playerId_;
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return Whether the playerId field is set.
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return The playerId.
+     */
+    public long getPlayerId() {
+      return playerId_;
+    }
+
+    public static final int POS_FIELD_NUMBER = 2;
+    private first.com.protocol.move.PersonMove.PlayerFPoint3 pos_;
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * @return Whether the pos field is set.
+     */
+    public boolean hasPos() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * @return The pos.
+     */
+    public first.com.protocol.move.PersonMove.PlayerFPoint3 getPos() {
+      return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+    }
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     */
+    public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder() {
+      return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+    }
+
+    public static final int DIR_FIELD_NUMBER = 3;
+    private first.com.protocol.move.PersonMove.PlayerFPoint3 dir_;
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     * @return Whether the dir field is set.
+     */
+    public boolean hasDir() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     * @return The dir.
+     */
+    public first.com.protocol.move.PersonMove.PlayerFPoint3 getDir() {
+      return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+    }
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     */
+    public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder() {
+      return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt64(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getPos());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getDir());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getPos());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getDir());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof first.com.protocol.move.PersonMove.CSPlayerMove)) {
+        return super.equals(obj);
+      }
+      first.com.protocol.move.PersonMove.CSPlayerMove other = (first.com.protocol.move.PersonMove.CSPlayerMove) obj;
+
+      if (hasPlayerId() != other.hasPlayerId()) return false;
+      if (hasPlayerId()) {
+        if (getPlayerId()
+            != other.getPlayerId()) return false;
+      }
+      if (hasPos() != other.hasPos()) return false;
+      if (hasPos()) {
+        if (!getPos()
+            .equals(other.getPos())) return false;
+      }
+      if (hasDir() != other.hasDir()) return false;
+      if (hasDir()) {
+        if (!getDir()
+            .equals(other.getDir())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getPlayerId());
+      }
+      if (hasPos()) {
+        hash = (37 * hash) + POS_FIELD_NUMBER;
+        hash = (53 * hash) + getPos().hashCode();
+      }
+      if (hasDir()) {
+        hash = (37 * hash) + DIR_FIELD_NUMBER;
+        hash = (53 * hash) + getDir().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.move.PersonMove.CSPlayerMove parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(first.com.protocol.move.PersonMove.CSPlayerMove prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 3
+     * </pre>
+     *
+     * Protobuf type {@code move.CSPlayerMove}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:move.CSPlayerMove)
+        first.com.protocol.move.PersonMove.CSPlayerMoveOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return first.com.protocol.move.PersonMove.internal_static_move_CSPlayerMove_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return first.com.protocol.move.PersonMove.internal_static_move_CSPlayerMove_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                first.com.protocol.move.PersonMove.CSPlayerMove.class, first.com.protocol.move.PersonMove.CSPlayerMove.Builder.class);
+      }
+
+      // Construct using first.com.protocol.move.PersonMove.CSPlayerMove.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPosFieldBuilder();
+          getDirFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          posBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (dirBuilder_ == null) {
+          dir_ = null;
+        } else {
+          dirBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return first.com.protocol.move.PersonMove.internal_static_move_CSPlayerMove_descriptor;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.move.PersonMove.CSPlayerMove getDefaultInstanceForType() {
+        return first.com.protocol.move.PersonMove.CSPlayerMove.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public first.com.protocol.move.PersonMove.CSPlayerMove build() {
+        first.com.protocol.move.PersonMove.CSPlayerMove result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.move.PersonMove.CSPlayerMove buildPartial() {
+        first.com.protocol.move.PersonMove.CSPlayerMove result = new first.com.protocol.move.PersonMove.CSPlayerMove(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.playerId_ = playerId_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          if (posBuilder_ == null) {
+            result.pos_ = pos_;
+          } else {
+            result.pos_ = posBuilder_.build();
+          }
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          if (dirBuilder_ == null) {
+            result.dir_ = dir_;
+          } else {
+            result.dir_ = dirBuilder_.build();
+          }
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof first.com.protocol.move.PersonMove.CSPlayerMove) {
+          return mergeFrom((first.com.protocol.move.PersonMove.CSPlayerMove)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(first.com.protocol.move.PersonMove.CSPlayerMove other) {
+        if (other == first.com.protocol.move.PersonMove.CSPlayerMove.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        if (other.hasPos()) {
+          mergePos(other.getPos());
+        }
+        if (other.hasDir()) {
+          mergeDir(other.getDir());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        first.com.protocol.move.PersonMove.CSPlayerMove parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (first.com.protocol.move.PersonMove.CSPlayerMove) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long playerId_ ;
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @return Whether the playerId field is set.
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @return The playerId.
+       */
+      public long getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @param value The playerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayerId(long value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private first.com.protocol.move.PersonMove.PlayerFPoint3 pos_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> posBuilder_;
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * @return Whether the pos field is set.
+       */
+      public boolean hasPos() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * @return The pos.
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3 getPos() {
+        if (posBuilder_ == null) {
+          return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+        } else {
+          return posBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public Builder setPos(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
+        if (posBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pos_ = value;
+          onChanged();
+        } else {
+          posBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public Builder setPos(
+          first.com.protocol.move.PersonMove.PlayerFPoint3.Builder builderForValue) {
+        if (posBuilder_ == null) {
+          pos_ = builderForValue.build();
+          onChanged();
+        } else {
+          posBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public Builder mergePos(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
+        if (posBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0) &&
+              pos_ != null &&
+              pos_ != first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) {
+            pos_ =
+              first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder(pos_).mergeFrom(value).buildPartial();
+          } else {
+            pos_ = value;
+          }
+          onChanged();
+        } else {
+          posBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public Builder clearPos() {
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          posBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3.Builder getPosBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getPosFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder() {
+        if (posBuilder_ != null) {
+          return posBuilder_.getMessageOrBuilder();
+        } else {
+          return pos_ == null ?
+              first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+        }
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> 
+          getPosFieldBuilder() {
+        if (posBuilder_ == null) {
+          posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder>(
+                  getPos(),
+                  getParentForChildren(),
+                  isClean());
+          pos_ = null;
+        }
+        return posBuilder_;
+      }
+
+      private first.com.protocol.move.PersonMove.PlayerFPoint3 dir_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> dirBuilder_;
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       * @return Whether the dir field is set.
+       */
+      public boolean hasDir() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       * @return The dir.
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3 getDir() {
+        if (dirBuilder_ == null) {
+          return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+        } else {
+          return dirBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public Builder setDir(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
+        if (dirBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dir_ = value;
+          onChanged();
+        } else {
+          dirBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public Builder setDir(
+          first.com.protocol.move.PersonMove.PlayerFPoint3.Builder builderForValue) {
+        if (dirBuilder_ == null) {
+          dir_ = builderForValue.build();
+          onChanged();
+        } else {
+          dirBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public Builder mergeDir(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
+        if (dirBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+              dir_ != null &&
+              dir_ != first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) {
+            dir_ =
+              first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder(dir_).mergeFrom(value).buildPartial();
+          } else {
+            dir_ = value;
+          }
+          onChanged();
+        } else {
+          dirBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public Builder clearDir() {
+        if (dirBuilder_ == null) {
+          dir_ = null;
+          onChanged();
+        } else {
+          dirBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3.Builder getDirBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getDirFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder() {
+        if (dirBuilder_ != null) {
+          return dirBuilder_.getMessageOrBuilder();
+        } else {
+          return dir_ == null ?
+              first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+        }
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> 
+          getDirFieldBuilder() {
+        if (dirBuilder_ == null) {
+          dirBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder>(
+                  getDir(),
+                  getParentForChildren(),
+                  isClean());
+          dir_ = null;
+        }
+        return dirBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:move.CSPlayerMove)
+    }
+
+    // @@protoc_insertion_point(class_scope:move.CSPlayerMove)
+    private static final first.com.protocol.move.PersonMove.CSPlayerMove DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new first.com.protocol.move.PersonMove.CSPlayerMove();
+    }
+
+    public static first.com.protocol.move.PersonMove.CSPlayerMove getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CSPlayerMove>
+        PARSER = new com.google.protobuf.AbstractParser<CSPlayerMove>() {
+      @java.lang.Override
+      public CSPlayerMove parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CSPlayerMove(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CSPlayerMove> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CSPlayerMove> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public first.com.protocol.move.PersonMove.CSPlayerMove getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SCPlayerMoveOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:move.SCPlayerMove)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return Whether the playerId field is set.
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return The playerId.
+     */
+    long getPlayerId();
+
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * @return Whether the pos field is set.
+     */
+    boolean hasPos();
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * @return The pos.
+     */
+    first.com.protocol.move.PersonMove.PlayerFPoint3 getPos();
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     */
+    first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder();
+
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     * @return Whether the dir field is set.
+     */
+    boolean hasDir();
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     * @return The dir.
+     */
+    first.com.protocol.move.PersonMove.PlayerFPoint3 getDir();
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     */
+    first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder();
+  }
+  /**
+   * <pre>
+   * 4
+   * </pre>
+   *
+   * Protobuf type {@code move.SCPlayerMove}
+   */
+  public  static final class SCPlayerMove extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:move.SCPlayerMove)
+      SCPlayerMoveOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SCPlayerMove.newBuilder() to construct.
+    private SCPlayerMove(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SCPlayerMove() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SCPlayerMove();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SCPlayerMove(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              first.com.protocol.move.PersonMove.PlayerFPoint3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) != 0)) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(first.com.protocol.move.PersonMove.PlayerFPoint3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 26: {
+              first.com.protocol.move.PersonMove.PlayerFPoint3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) != 0)) {
+                subBuilder = dir_.toBuilder();
+              }
+              dir_ = input.readMessage(first.com.protocol.move.PersonMove.PlayerFPoint3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dir_);
+                dir_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return first.com.protocol.move.PersonMove.internal_static_move_SCPlayerMove_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return first.com.protocol.move.PersonMove.internal_static_move_SCPlayerMove_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              first.com.protocol.move.PersonMove.SCPlayerMove.class, first.com.protocol.move.PersonMove.SCPlayerMove.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private long playerId_;
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return Whether the playerId field is set.
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return The playerId.
+     */
+    public long getPlayerId() {
+      return playerId_;
+    }
+
+    public static final int POS_FIELD_NUMBER = 2;
+    private first.com.protocol.move.PersonMove.PlayerFPoint3 pos_;
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * @return Whether the pos field is set.
+     */
+    public boolean hasPos() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * @return The pos.
+     */
+    public first.com.protocol.move.PersonMove.PlayerFPoint3 getPos() {
+      return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+    }
+    /**
+     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     */
+    public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder() {
+      return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+    }
+
+    public static final int DIR_FIELD_NUMBER = 3;
+    private first.com.protocol.move.PersonMove.PlayerFPoint3 dir_;
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     * @return Whether the dir field is set.
+     */
+    public boolean hasDir() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     * @return The dir.
+     */
+    public first.com.protocol.move.PersonMove.PlayerFPoint3 getDir() {
+      return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+    }
+    /**
+     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+     */
+    public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder() {
+      return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt64(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getPos());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getDir());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getPos());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getDir());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof first.com.protocol.move.PersonMove.SCPlayerMove)) {
+        return super.equals(obj);
+      }
+      first.com.protocol.move.PersonMove.SCPlayerMove other = (first.com.protocol.move.PersonMove.SCPlayerMove) obj;
+
+      if (hasPlayerId() != other.hasPlayerId()) return false;
+      if (hasPlayerId()) {
+        if (getPlayerId()
+            != other.getPlayerId()) return false;
+      }
+      if (hasPos() != other.hasPos()) return false;
+      if (hasPos()) {
+        if (!getPos()
+            .equals(other.getPos())) return false;
+      }
+      if (hasDir() != other.hasDir()) return false;
+      if (hasDir()) {
+        if (!getDir()
+            .equals(other.getDir())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getPlayerId());
+      }
+      if (hasPos()) {
+        hash = (37 * hash) + POS_FIELD_NUMBER;
+        hash = (53 * hash) + getPos().hashCode();
+      }
+      if (hasDir()) {
+        hash = (37 * hash) + DIR_FIELD_NUMBER;
+        hash = (53 * hash) + getDir().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.move.PersonMove.SCPlayerMove parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(first.com.protocol.move.PersonMove.SCPlayerMove prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 4
+     * </pre>
+     *
+     * Protobuf type {@code move.SCPlayerMove}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:move.SCPlayerMove)
+        first.com.protocol.move.PersonMove.SCPlayerMoveOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return first.com.protocol.move.PersonMove.internal_static_move_SCPlayerMove_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return first.com.protocol.move.PersonMove.internal_static_move_SCPlayerMove_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                first.com.protocol.move.PersonMove.SCPlayerMove.class, first.com.protocol.move.PersonMove.SCPlayerMove.Builder.class);
+      }
+
+      // Construct using first.com.protocol.move.PersonMove.SCPlayerMove.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPosFieldBuilder();
+          getDirFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          posBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (dirBuilder_ == null) {
+          dir_ = null;
+        } else {
+          dirBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return first.com.protocol.move.PersonMove.internal_static_move_SCPlayerMove_descriptor;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.move.PersonMove.SCPlayerMove getDefaultInstanceForType() {
+        return first.com.protocol.move.PersonMove.SCPlayerMove.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public first.com.protocol.move.PersonMove.SCPlayerMove build() {
+        first.com.protocol.move.PersonMove.SCPlayerMove result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.move.PersonMove.SCPlayerMove buildPartial() {
+        first.com.protocol.move.PersonMove.SCPlayerMove result = new first.com.protocol.move.PersonMove.SCPlayerMove(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.playerId_ = playerId_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          if (posBuilder_ == null) {
+            result.pos_ = pos_;
+          } else {
+            result.pos_ = posBuilder_.build();
+          }
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          if (dirBuilder_ == null) {
+            result.dir_ = dir_;
+          } else {
+            result.dir_ = dirBuilder_.build();
+          }
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof first.com.protocol.move.PersonMove.SCPlayerMove) {
+          return mergeFrom((first.com.protocol.move.PersonMove.SCPlayerMove)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(first.com.protocol.move.PersonMove.SCPlayerMove other) {
+        if (other == first.com.protocol.move.PersonMove.SCPlayerMove.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        if (other.hasPos()) {
+          mergePos(other.getPos());
+        }
+        if (other.hasDir()) {
+          mergeDir(other.getDir());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        first.com.protocol.move.PersonMove.SCPlayerMove parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (first.com.protocol.move.PersonMove.SCPlayerMove) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long playerId_ ;
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @return Whether the playerId field is set.
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @return The playerId.
+       */
+      public long getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @param value The playerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayerId(long value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private first.com.protocol.move.PersonMove.PlayerFPoint3 pos_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> posBuilder_;
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * @return Whether the pos field is set.
+       */
+      public boolean hasPos() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * @return The pos.
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3 getPos() {
+        if (posBuilder_ == null) {
+          return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+        } else {
+          return posBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public Builder setPos(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
+        if (posBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pos_ = value;
+          onChanged();
+        } else {
+          posBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public Builder setPos(
+          first.com.protocol.move.PersonMove.PlayerFPoint3.Builder builderForValue) {
+        if (posBuilder_ == null) {
+          pos_ = builderForValue.build();
+          onChanged();
+        } else {
+          posBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public Builder mergePos(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
+        if (posBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0) &&
+              pos_ != null &&
+              pos_ != first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) {
+            pos_ =
+              first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder(pos_).mergeFrom(value).buildPartial();
+          } else {
+            pos_ = value;
+          }
+          onChanged();
+        } else {
+          posBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public Builder clearPos() {
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          posBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3.Builder getPosBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getPosFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder() {
+        if (posBuilder_ != null) {
+          return posBuilder_.getMessageOrBuilder();
+        } else {
+          return pos_ == null ?
+              first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+        }
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> 
+          getPosFieldBuilder() {
+        if (posBuilder_ == null) {
+          posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder>(
+                  getPos(),
+                  getParentForChildren(),
+                  isClean());
+          pos_ = null;
+        }
+        return posBuilder_;
+      }
+
+      private first.com.protocol.move.PersonMove.PlayerFPoint3 dir_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> dirBuilder_;
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       * @return Whether the dir field is set.
+       */
+      public boolean hasDir() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       * @return The dir.
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3 getDir() {
+        if (dirBuilder_ == null) {
+          return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+        } else {
+          return dirBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public Builder setDir(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
+        if (dirBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dir_ = value;
+          onChanged();
+        } else {
+          dirBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public Builder setDir(
+          first.com.protocol.move.PersonMove.PlayerFPoint3.Builder builderForValue) {
+        if (dirBuilder_ == null) {
+          dir_ = builderForValue.build();
+          onChanged();
+        } else {
+          dirBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public Builder mergeDir(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
+        if (dirBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+              dir_ != null &&
+              dir_ != first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) {
+            dir_ =
+              first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder(dir_).mergeFrom(value).buildPartial();
+          } else {
+            dir_ = value;
+          }
+          onChanged();
+        } else {
+          dirBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public Builder clearDir() {
+        if (dirBuilder_ == null) {
+          dir_ = null;
+          onChanged();
+        } else {
+          dirBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3.Builder getDirBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getDirFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder() {
+        if (dirBuilder_ != null) {
+          return dirBuilder_.getMessageOrBuilder();
+        } else {
+          return dir_ == null ?
+              first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+        }
+      }
+      /**
+       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> 
+          getDirFieldBuilder() {
+        if (dirBuilder_ == null) {
+          dirBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder>(
+                  getDir(),
+                  getParentForChildren(),
+                  isClean());
+          dir_ = null;
+        }
+        return dirBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:move.SCPlayerMove)
+    }
+
+    // @@protoc_insertion_point(class_scope:move.SCPlayerMove)
+    private static final first.com.protocol.move.PersonMove.SCPlayerMove DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new first.com.protocol.move.PersonMove.SCPlayerMove();
+    }
+
+    public static first.com.protocol.move.PersonMove.SCPlayerMove getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<SCPlayerMove>
+        PARSER = new com.google.protobuf.AbstractParser<SCPlayerMove>() {
+      @java.lang.Override
+      public SCPlayerMove parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SCPlayerMove(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SCPlayerMove> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SCPlayerMove> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public first.com.protocol.move.PersonMove.SCPlayerMove getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_move_Person_descriptor;
   private static final 
@@ -2921,6 +5506,21 @@ public final class PersonMove {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_move_AddressBook_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_move_PlayerFPoint3_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_move_PlayerFPoint3_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_move_CSPlayerMove_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_move_CSPlayerMove_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_move_SCPlayerMove_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_move_SCPlayerMove_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2936,8 +5536,15 @@ public final class PersonMove {
       "eNumber\022\016\n\006number\030\001 \002(\t\022*\n\004type\030\002 \001(\0162\026." +
       "move.Person.PhoneType:\004HOME\"+\n\tPhoneType" +
       "\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001\022\010\n\004WORK\020\002\"+\n\013Addr" +
-      "essBook\022\034\n\006people\030\001 \003(\0132\014.move.PersonB%\n" +
-      "\027first.com.protocol.moveB\nPersonMove"
+      "essBook\022\034\n\006people\030\001 \003(\0132\014.move.Person\"0\n" +
+      "\rPlayerFPoint3\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\022\t\n\001" +
+      "z\030\003 \001(\005\"d\n\014CSPlayerMove\022\020\n\010playerId\030\001 \001(" +
+      "\003\022 \n\003pos\030\002 \001(\0132\023.move.PlayerFPoint3\022 \n\003d" +
+      "ir\030\003 \001(\0132\023.move.PlayerFPoint3\"d\n\014SCPlaye" +
+      "rMove\022\020\n\010playerId\030\001 \001(\003\022 \n\003pos\030\002 \001(\0132\023.m" +
+      "ove.PlayerFPoint3\022 \n\003dir\030\003 \001(\0132\023.move.Pl" +
+      "ayerFPoint3B%\n\027first.com.protocol.moveB\n" +
+      "PersonMove"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2961,6 +5568,24 @@ public final class PersonMove {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_move_AddressBook_descriptor,
         new java.lang.String[] { "People", });
+    internal_static_move_PlayerFPoint3_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_move_PlayerFPoint3_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_move_PlayerFPoint3_descriptor,
+        new java.lang.String[] { "X", "Y", "Z", });
+    internal_static_move_CSPlayerMove_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_move_CSPlayerMove_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_move_CSPlayerMove_descriptor,
+        new java.lang.String[] { "PlayerId", "Pos", "Dir", });
+    internal_static_move_SCPlayerMove_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_move_SCPlayerMove_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_move_SCPlayerMove_descriptor,
+        new java.lang.String[] { "PlayerId", "Pos", "Dir", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

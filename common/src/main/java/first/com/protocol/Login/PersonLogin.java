@@ -47,6 +47,10 @@ public final class PersonLogin {
     int getPassword();
   }
   /**
+   * <pre>
+   * 1
+   * </pre>
+   *
    * Protobuf type {@code login.CSPlayerLogin}
    */
   public  static final class CSPlayerLogin extends
@@ -375,6 +379,10 @@ public final class PersonLogin {
       return builder;
     }
     /**
+     * <pre>
+     * 1
+     * </pre>
+     *
      * Protobuf type {@code login.CSPlayerLogin}
      */
     public static final class Builder extends
@@ -734,6 +742,10 @@ public final class PersonLogin {
     long getPlayerId(int index);
   }
   /**
+   * <pre>
+   * 2
+   * </pre>
+   *
    * Protobuf type {@code login.SCPlayerLogin}
    */
   public  static final class SCPlayerLogin extends
@@ -1025,6 +1037,10 @@ public final class PersonLogin {
       return builder;
     }
     /**
+     * <pre>
+     * 2
+     * </pre>
+     *
      * Protobuf type {@code login.SCPlayerLogin}
      */
     public static final class Builder extends

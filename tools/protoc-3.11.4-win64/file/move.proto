@@ -27,3 +27,22 @@ message Person {
 message AddressBook {
   repeated Person people = 1;
 }
+
+
+message PlayerFPoint3{
+  optional int32 x = 1;
+  optional int32 y = 2;
+  optional int32 z = 3;
+}
+
+message CSPlayerMove{ //3-移動
+  optional int64 playerId = 1;
+  optional PlayerFPoint3 pos = 2;
+  optional PlayerFPoint3 dir = 3;
+}
+
+message SCPlayerMove{ //4-移動返回
+    optional int64 playerId = 1;
+    optional PlayerFPoint3 pos = 2;
+    optional PlayerFPoint3 dir = 3;
+}

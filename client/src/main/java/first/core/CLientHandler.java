@@ -4,11 +4,8 @@ package first.core;/*
  */
 
 import first.bean.Protocal;
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.channel.socket.DatagramPacket;
-import io.netty.util.CharsetUtil;
 
 public  class CLientHandler extends SimpleChannelInboundHandler<Protocal> {
 

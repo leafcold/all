@@ -59,7 +59,7 @@ public class ClientMain {
 //            person.setEmail(String.valueOf(System.currentTimeMillis()));
 //            person.setName("my");
 //            PersonMove.Person nowPerSon=person.build();
-//            Protocal protocal=new Protocal((short) 1,nowPerSon.toByteArray().length,nowPerSon.toByteArray());
+//            Protocal protocal=new Protocal((short) 1,nowPerSon.toByteArray().length,10L,nowPerSon.toByteArray());
 //            f.channel().writeAndFlush(protocal.toArray());
 //
 //            // Wait until the connection is closed.
@@ -90,7 +90,7 @@ public class ClientMain {
             PersonMove.CSUDP.Builder sc = PersonMove.CSUDP.newBuilder();
             sc.setPlayerId(System.currentTimeMillis());
             byte[] bytes = sc.build().toByteArray();
-            Protocal protocal = new Protocal(CSUDP, bytes.length, bytes);
+            Protocal protocal = new Protocal(CSUDP, bytes.length,sc.getPlayerId(),bytes);
             ByteBuf msg = protocal.toArray();
             ch.writeAndFlush(new DatagramPacket(msg, new InetSocketAddress("127.0.0.1", 12310))).sync();
             ch.closeFuture().await();
@@ -100,13 +100,5 @@ public class ClientMain {
         } finally {
             group.shutdownGracefully();
         }
-
-//
-//
-//
-//
-//
-//
-//
     }
 }

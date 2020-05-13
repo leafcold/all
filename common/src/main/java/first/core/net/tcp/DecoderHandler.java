@@ -26,6 +26,8 @@ public class  DecoderHandler extends ByteToMessageDecoder {
         short codeLength = byteBuf.readShort();
         //获取长度值 在缓冲区的第2到第4个字节
         int dataLength = byteBuf.readInt();
+
+        long pid = byteBuf.readLong();
         if (codeLength <= 0 || dataLength <= 0) {
             MLOG.info("当前消息的格式不对丢弃");
             return;
@@ -45,7 +47,7 @@ public class  DecoderHandler extends ByteToMessageDecoder {
         //将数据存储到body内
         byte[] body=new byte[dataLength];
         byteBuf.readBytes(body);
-        Protocal protocal = new Protocal(codeLength,dataLength,body);
+        Protocal protocal = new Protocal(codeLength,dataLength,pid,body);
         list.add(protocal);
     }
 }

@@ -33,6 +33,9 @@ public class UDPDecoder extends MessageToMessageDecoder<DatagramPacket> {
         short codeLength = byteBuf.readShort();
         //获取长度值 在缓冲区的第2到第4个字节
         int dataLength = byteBuf.readInt();
+
+        long pid =byteBuf.readLong();
+
         if (codeLength <= 0 || dataLength <= 0) {
             MLOG.info("当前消息的格式不对丢弃");
             return;
@@ -52,14 +55,9 @@ public class UDPDecoder extends MessageToMessageDecoder<DatagramPacket> {
         //将数据存储到body内
         byte[] body = new byte[dataLength];
         byteBuf.readBytes(body);
-        Protocal protocal = new Protocal(codeLength, dataLength, body);
-        if(protocal.getCode() == Code.CSUDP){ //TODO 怎么存
-            Pair<Object, Method> objectPair = ContextMap.get(protocal.getCode());
-            Object invokeObject = protoMap.get(((Protocal) protocal).getCode()).invoke(null, new Object[]{protocal.getProbuffer()});
-            PersonMove.CSUDP csudp  = ( PersonMove.CSUDP) invokeObject;
-            long playerId = csudp.getPlayerId();
-            InetSocketAddress sender = datagramPacket.sender();
-            UDPSenderCache.put(playerId,sender);
+        Protocal protocal = new Protocal(codeLength, dataLength,pid, body);
+        if(protocal.getCode() == Code.CSUDP){
+            UDPSenderCache.put(pid,datagramPacket.sender());
         }
         out.add(protocal);
     }

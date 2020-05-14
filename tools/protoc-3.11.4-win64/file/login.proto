@@ -13,3 +13,11 @@ message CSPlayerLogin{ //1-登录
 message SCPlayerLogin{ //2-登录返回
   repeated int64 playerId = 1;
 }
+
+message CSUDP{ //4-连接udp
+  optional int64 playerId = 1;
+}
+
+message SCUDP{ //5-连接udp成功
+  repeated int64 playerId = 1;
+}

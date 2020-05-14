@@ -1,6 +1,7 @@
 package first.core.net.udp;
 
-import java.net.InetSocketAddress;
+import first.com.model.Player;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,9 +9,9 @@ import java.util.Map;
  * channel的地址
  */
 public class UDPSenderCache {
-     private  static final Map<Long, InetSocketAddress> senderCache = new HashMap<>();
+     private  static final Map<Long, Player> senderCache = new HashMap<>();
 
-    public static void put(Long key, InetSocketAddress value) {
+    public static void put(Long key, Player value) {
         senderCache.put(key, value);
 
     }
@@ -19,7 +20,7 @@ public class UDPSenderCache {
         senderCache.remove(key);
     }
 
-    public static InetSocketAddress get(Long key){
+    public static Player get(Long key){
         return senderCache.get(key);
     }
 
@@ -27,7 +28,7 @@ public class UDPSenderCache {
         return senderCache.size();
     }
 
-    public static Map<Long, InetSocketAddress> getData(){
+    public static Map<Long, Player> getData(){
         return senderCache;
     }
 }

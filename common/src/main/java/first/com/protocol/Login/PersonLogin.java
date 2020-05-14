@@ -1331,6 +1331,1145 @@ public final class PersonLogin {
 
   }
 
+  public interface CSUDPOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:login.CSUDP)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return Whether the playerId field is set.
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return The playerId.
+     */
+    long getPlayerId();
+  }
+  /**
+   * <pre>
+   *4-连接udp
+   * </pre>
+   *
+   * Protobuf type {@code login.CSUDP}
+   */
+  public  static final class CSUDP extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:login.CSUDP)
+      CSUDPOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CSUDP.newBuilder() to construct.
+    private CSUDP(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CSUDP() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CSUDP();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CSUDP(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return first.com.protocol.Login.PersonLogin.internal_static_login_CSUDP_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return first.com.protocol.Login.PersonLogin.internal_static_login_CSUDP_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              first.com.protocol.Login.PersonLogin.CSUDP.class, first.com.protocol.Login.PersonLogin.CSUDP.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private long playerId_;
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return Whether the playerId field is set.
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional int64 playerId = 1;</code>
+     * @return The playerId.
+     */
+    public long getPlayerId() {
+      return playerId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt64(1, playerId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, playerId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof first.com.protocol.Login.PersonLogin.CSUDP)) {
+        return super.equals(obj);
+      }
+      first.com.protocol.Login.PersonLogin.CSUDP other = (first.com.protocol.Login.PersonLogin.CSUDP) obj;
+
+      if (hasPlayerId() != other.hasPlayerId()) return false;
+      if (hasPlayerId()) {
+        if (getPlayerId()
+            != other.getPlayerId()) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getPlayerId());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.Login.PersonLogin.CSUDP parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(first.com.protocol.Login.PersonLogin.CSUDP prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *4-连接udp
+     * </pre>
+     *
+     * Protobuf type {@code login.CSUDP}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:login.CSUDP)
+        first.com.protocol.Login.PersonLogin.CSUDPOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return first.com.protocol.Login.PersonLogin.internal_static_login_CSUDP_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return first.com.protocol.Login.PersonLogin.internal_static_login_CSUDP_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                first.com.protocol.Login.PersonLogin.CSUDP.class, first.com.protocol.Login.PersonLogin.CSUDP.Builder.class);
+      }
+
+      // Construct using first.com.protocol.Login.PersonLogin.CSUDP.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return first.com.protocol.Login.PersonLogin.internal_static_login_CSUDP_descriptor;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.Login.PersonLogin.CSUDP getDefaultInstanceForType() {
+        return first.com.protocol.Login.PersonLogin.CSUDP.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public first.com.protocol.Login.PersonLogin.CSUDP build() {
+        first.com.protocol.Login.PersonLogin.CSUDP result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.Login.PersonLogin.CSUDP buildPartial() {
+        first.com.protocol.Login.PersonLogin.CSUDP result = new first.com.protocol.Login.PersonLogin.CSUDP(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.playerId_ = playerId_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof first.com.protocol.Login.PersonLogin.CSUDP) {
+          return mergeFrom((first.com.protocol.Login.PersonLogin.CSUDP)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(first.com.protocol.Login.PersonLogin.CSUDP other) {
+        if (other == first.com.protocol.Login.PersonLogin.CSUDP.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        first.com.protocol.Login.PersonLogin.CSUDP parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (first.com.protocol.Login.PersonLogin.CSUDP) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long playerId_ ;
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @return Whether the playerId field is set.
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @return The playerId.
+       */
+      public long getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @param value The playerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayerId(long value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 playerId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:login.CSUDP)
+    }
+
+    // @@protoc_insertion_point(class_scope:login.CSUDP)
+    private static final first.com.protocol.Login.PersonLogin.CSUDP DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new first.com.protocol.Login.PersonLogin.CSUDP();
+    }
+
+    public static first.com.protocol.Login.PersonLogin.CSUDP getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CSUDP>
+        PARSER = new com.google.protobuf.AbstractParser<CSUDP>() {
+      @java.lang.Override
+      public CSUDP parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CSUDP(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CSUDP> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CSUDP> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public first.com.protocol.Login.PersonLogin.CSUDP getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SCUDPOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:login.SCUDP)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated int64 playerId = 1;</code>
+     * @return A list containing the playerId.
+     */
+    java.util.List<java.lang.Long> getPlayerIdList();
+    /**
+     * <code>repeated int64 playerId = 1;</code>
+     * @return The count of playerId.
+     */
+    int getPlayerIdCount();
+    /**
+     * <code>repeated int64 playerId = 1;</code>
+     * @param index The index of the element to return.
+     * @return The playerId at the given index.
+     */
+    long getPlayerId(int index);
+  }
+  /**
+   * <pre>
+   *5-连接udp成功
+   * </pre>
+   *
+   * Protobuf type {@code login.SCUDP}
+   */
+  public  static final class SCUDP extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:login.SCUDP)
+      SCUDPOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SCUDP.newBuilder() to construct.
+    private SCUDP(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SCUDP() {
+      playerId_ = emptyLongList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SCUDP();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SCUDP(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                playerId_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              playerId_.addLong(input.readInt64());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                playerId_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                playerId_.addLong(input.readInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          playerId_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return first.com.protocol.Login.PersonLogin.internal_static_login_SCUDP_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return first.com.protocol.Login.PersonLogin.internal_static_login_SCUDP_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              first.com.protocol.Login.PersonLogin.SCUDP.class, first.com.protocol.Login.PersonLogin.SCUDP.Builder.class);
+    }
+
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.LongList playerId_;
+    /**
+     * <code>repeated int64 playerId = 1;</code>
+     * @return A list containing the playerId.
+     */
+    public java.util.List<java.lang.Long>
+        getPlayerIdList() {
+      return playerId_;
+    }
+    /**
+     * <code>repeated int64 playerId = 1;</code>
+     * @return The count of playerId.
+     */
+    public int getPlayerIdCount() {
+      return playerId_.size();
+    }
+    /**
+     * <code>repeated int64 playerId = 1;</code>
+     * @param index The index of the element to return.
+     * @return The playerId at the given index.
+     */
+    public long getPlayerId(int index) {
+      return playerId_.getLong(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < playerId_.size(); i++) {
+        output.writeInt64(1, playerId_.getLong(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < playerId_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt64SizeNoTag(playerId_.getLong(i));
+        }
+        size += dataSize;
+        size += 1 * getPlayerIdList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof first.com.protocol.Login.PersonLogin.SCUDP)) {
+        return super.equals(obj);
+      }
+      first.com.protocol.Login.PersonLogin.SCUDP other = (first.com.protocol.Login.PersonLogin.SCUDP) obj;
+
+      if (!getPlayerIdList()
+          .equals(other.getPlayerIdList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getPlayerIdCount() > 0) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerIdList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static first.com.protocol.Login.PersonLogin.SCUDP parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(first.com.protocol.Login.PersonLogin.SCUDP prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *5-连接udp成功
+     * </pre>
+     *
+     * Protobuf type {@code login.SCUDP}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:login.SCUDP)
+        first.com.protocol.Login.PersonLogin.SCUDPOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return first.com.protocol.Login.PersonLogin.internal_static_login_SCUDP_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return first.com.protocol.Login.PersonLogin.internal_static_login_SCUDP_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                first.com.protocol.Login.PersonLogin.SCUDP.class, first.com.protocol.Login.PersonLogin.SCUDP.Builder.class);
+      }
+
+      // Construct using first.com.protocol.Login.PersonLogin.SCUDP.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        playerId_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return first.com.protocol.Login.PersonLogin.internal_static_login_SCUDP_descriptor;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.Login.PersonLogin.SCUDP getDefaultInstanceForType() {
+        return first.com.protocol.Login.PersonLogin.SCUDP.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public first.com.protocol.Login.PersonLogin.SCUDP build() {
+        first.com.protocol.Login.PersonLogin.SCUDP result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public first.com.protocol.Login.PersonLogin.SCUDP buildPartial() {
+        first.com.protocol.Login.PersonLogin.SCUDP result = new first.com.protocol.Login.PersonLogin.SCUDP(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          playerId_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.playerId_ = playerId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof first.com.protocol.Login.PersonLogin.SCUDP) {
+          return mergeFrom((first.com.protocol.Login.PersonLogin.SCUDP)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(first.com.protocol.Login.PersonLogin.SCUDP other) {
+        if (other == first.com.protocol.Login.PersonLogin.SCUDP.getDefaultInstance()) return this;
+        if (!other.playerId_.isEmpty()) {
+          if (playerId_.isEmpty()) {
+            playerId_ = other.playerId_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePlayerIdIsMutable();
+            playerId_.addAll(other.playerId_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        first.com.protocol.Login.PersonLogin.SCUDP parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (first.com.protocol.Login.PersonLogin.SCUDP) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.LongList playerId_ = emptyLongList();
+      private void ensurePlayerIdIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          playerId_ = mutableCopy(playerId_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated int64 playerId = 1;</code>
+       * @return A list containing the playerId.
+       */
+      public java.util.List<java.lang.Long>
+          getPlayerIdList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(playerId_) : playerId_;
+      }
+      /**
+       * <code>repeated int64 playerId = 1;</code>
+       * @return The count of playerId.
+       */
+      public int getPlayerIdCount() {
+        return playerId_.size();
+      }
+      /**
+       * <code>repeated int64 playerId = 1;</code>
+       * @param index The index of the element to return.
+       * @return The playerId at the given index.
+       */
+      public long getPlayerId(int index) {
+        return playerId_.getLong(index);
+      }
+      /**
+       * <code>repeated int64 playerId = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The playerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayerId(
+          int index, long value) {
+        ensurePlayerIdIsMutable();
+        playerId_.setLong(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 playerId = 1;</code>
+       * @param value The playerId to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPlayerId(long value) {
+        ensurePlayerIdIsMutable();
+        playerId_.addLong(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 playerId = 1;</code>
+       * @param values The playerId to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPlayerId(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensurePlayerIdIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, playerId_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 playerId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayerId() {
+        playerId_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:login.SCUDP)
+    }
+
+    // @@protoc_insertion_point(class_scope:login.SCUDP)
+    private static final first.com.protocol.Login.PersonLogin.SCUDP DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new first.com.protocol.Login.PersonLogin.SCUDP();
+    }
+
+    public static first.com.protocol.Login.PersonLogin.SCUDP getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<SCUDP>
+        PARSER = new com.google.protobuf.AbstractParser<SCUDP>() {
+      @java.lang.Override
+      public SCUDP parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SCUDP(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SCUDP> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SCUDP> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public first.com.protocol.Login.PersonLogin.SCUDP getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_login_CSPlayerLogin_descriptor;
   private static final 
@@ -1341,6 +2480,16 @@ public final class PersonLogin {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_login_SCPlayerLogin_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_login_CSUDP_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_login_CSUDP_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_login_SCUDP_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_login_SCUDP_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1352,8 +2501,9 @@ public final class PersonLogin {
     java.lang.String[] descriptorData = {
       "\n\013login.proto\022\005login\".\n\rCSPlayerLogin\022\013\n" +
       "\003uid\030\001 \001(\t\022\020\n\010password\030\002 \001(\005\"!\n\rSCPlayer" +
-      "Login\022\020\n\010playerId\030\001 \003(\003B\'\n\030first.com.pro" +
-      "tocol.LoginB\013PersonLogin"
+      "Login\022\020\n\010playerId\030\001 \003(\003\"\031\n\005CSUDP\022\020\n\010play" +
+      "erId\030\001 \001(\003\"\031\n\005SCUDP\022\020\n\010playerId\030\001 \003(\003B\'\n" +
+      "\030first.com.protocol.LoginB\013PersonLogin"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1370,6 +2520,18 @@ public final class PersonLogin {
     internal_static_login_SCPlayerLogin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_login_SCPlayerLogin_descriptor,
+        new java.lang.String[] { "PlayerId", });
+    internal_static_login_CSUDP_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_login_CSUDP_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_login_CSUDP_descriptor,
+        new java.lang.String[] { "PlayerId", });
+    internal_static_login_SCUDP_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_login_SCUDP_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_login_SCUDP_descriptor,
         new java.lang.String[] { "PlayerId", });
   }
 

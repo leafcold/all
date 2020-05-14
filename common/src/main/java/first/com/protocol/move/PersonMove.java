@@ -2906,63 +2906,67 @@ public final class PersonMove {
 
   }
 
-  public interface PlayerFPoint3OrBuilder extends
-      // @@protoc_insertion_point(interface_extends:move.PlayerFPoint3)
+  public interface MoveInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:move.MoveInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 x = 1;</code>
-     * @return Whether the x field is set.
+     * <code>optional int32 dir = 2;</code>
+     * @return Whether the dir field is set.
      */
-    boolean hasX();
+    boolean hasDir();
     /**
-     * <code>optional int32 x = 1;</code>
-     * @return The x.
+     * <code>optional int32 dir = 2;</code>
+     * @return The dir.
      */
-    int getX();
+    int getDir();
 
     /**
-     * <code>optional int32 y = 2;</code>
-     * @return Whether the y field is set.
+     * <code>optional int64 ctime = 3;</code>
+     * @return Whether the ctime field is set.
      */
-    boolean hasY();
+    boolean hasCtime();
     /**
-     * <code>optional int32 y = 2;</code>
-     * @return The y.
+     * <code>optional int64 ctime = 3;</code>
+     * @return The ctime.
      */
-    int getY();
+    long getCtime();
 
     /**
-     * <code>optional int32 z = 3;</code>
-     * @return Whether the z field is set.
+     * <code>optional int64 stime = 4;</code>
+     * @return Whether the stime field is set.
      */
-    boolean hasZ();
+    boolean hasStime();
     /**
-     * <code>optional int32 z = 3;</code>
-     * @return The z.
+     * <code>optional int64 stime = 4;</code>
+     * @return The stime.
      */
-    int getZ();
+    long getStime();
   }
   /**
-   * Protobuf type {@code move.PlayerFPoint3}
+   * <pre>
+   *移動实体
+   * </pre>
+   *
+   * Protobuf type {@code move.MoveInfo}
    */
-  public  static final class PlayerFPoint3 extends
+  public  static final class MoveInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:move.PlayerFPoint3)
-      PlayerFPoint3OrBuilder {
+      // @@protoc_insertion_point(message_implements:move.MoveInfo)
+      MoveInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PlayerFPoint3.newBuilder() to construct.
-    private PlayerFPoint3(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MoveInfo.newBuilder() to construct.
+    private MoveInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PlayerFPoint3() {
+    private MoveInfo() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PlayerFPoint3();
+      return new MoveInfo();
     }
 
     @java.lang.Override
@@ -2970,7 +2974,7 @@ public final class PersonMove {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerFPoint3(
+    private MoveInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2989,19 +2993,19 @@ public final class PersonMove {
             case 0:
               done = true;
               break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              x_ = input.readInt32();
-              break;
-            }
             case 16: {
-              bitField0_ |= 0x00000002;
-              y_ = input.readInt32();
+              bitField0_ |= 0x00000001;
+              dir_ = input.readInt32();
               break;
             }
             case 24: {
+              bitField0_ |= 0x00000002;
+              ctime_ = input.readInt64();
+              break;
+            }
+            case 32: {
               bitField0_ |= 0x00000004;
-              z_ = input.readInt32();
+              stime_ = input.readInt64();
               break;
             }
             default: {
@@ -3025,67 +3029,67 @@ public final class PersonMove {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_descriptor;
+      return first.com.protocol.move.PersonMove.internal_static_move_MoveInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_fieldAccessorTable
+      return first.com.protocol.move.PersonMove.internal_static_move_MoveInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              first.com.protocol.move.PersonMove.PlayerFPoint3.class, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder.class);
+              first.com.protocol.move.PersonMove.MoveInfo.class, first.com.protocol.move.PersonMove.MoveInfo.Builder.class);
     }
 
     private int bitField0_;
-    public static final int X_FIELD_NUMBER = 1;
-    private int x_;
+    public static final int DIR_FIELD_NUMBER = 2;
+    private int dir_;
     /**
-     * <code>optional int32 x = 1;</code>
-     * @return Whether the x field is set.
+     * <code>optional int32 dir = 2;</code>
+     * @return Whether the dir field is set.
      */
-    public boolean hasX() {
+    public boolean hasDir() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional int32 x = 1;</code>
-     * @return The x.
+     * <code>optional int32 dir = 2;</code>
+     * @return The dir.
      */
-    public int getX() {
-      return x_;
+    public int getDir() {
+      return dir_;
     }
 
-    public static final int Y_FIELD_NUMBER = 2;
-    private int y_;
+    public static final int CTIME_FIELD_NUMBER = 3;
+    private long ctime_;
     /**
-     * <code>optional int32 y = 2;</code>
-     * @return Whether the y field is set.
+     * <code>optional int64 ctime = 3;</code>
+     * @return Whether the ctime field is set.
      */
-    public boolean hasY() {
+    public boolean hasCtime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional int32 y = 2;</code>
-     * @return The y.
+     * <code>optional int64 ctime = 3;</code>
+     * @return The ctime.
      */
-    public int getY() {
-      return y_;
+    public long getCtime() {
+      return ctime_;
     }
 
-    public static final int Z_FIELD_NUMBER = 3;
-    private int z_;
+    public static final int STIME_FIELD_NUMBER = 4;
+    private long stime_;
     /**
-     * <code>optional int32 z = 3;</code>
-     * @return Whether the z field is set.
+     * <code>optional int64 stime = 4;</code>
+     * @return Whether the stime field is set.
      */
-    public boolean hasZ() {
+    public boolean hasStime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional int32 z = 3;</code>
-     * @return The z.
+     * <code>optional int64 stime = 4;</code>
+     * @return The stime.
      */
-    public int getZ() {
-      return z_;
+    public long getStime() {
+      return stime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3103,13 +3107,13 @@ public final class PersonMove {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(1, x_);
+        output.writeInt32(2, dir_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt32(2, y_);
+        output.writeInt64(3, ctime_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeInt32(3, z_);
+        output.writeInt64(4, stime_);
       }
       unknownFields.writeTo(output);
     }
@@ -3122,15 +3126,15 @@ public final class PersonMove {
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, x_);
+          .computeInt32Size(2, dir_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, y_);
+          .computeInt64Size(3, ctime_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, z_);
+          .computeInt64Size(4, stime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3142,25 +3146,25 @@ public final class PersonMove {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof first.com.protocol.move.PersonMove.PlayerFPoint3)) {
+      if (!(obj instanceof first.com.protocol.move.PersonMove.MoveInfo)) {
         return super.equals(obj);
       }
-      first.com.protocol.move.PersonMove.PlayerFPoint3 other = (first.com.protocol.move.PersonMove.PlayerFPoint3) obj;
+      first.com.protocol.move.PersonMove.MoveInfo other = (first.com.protocol.move.PersonMove.MoveInfo) obj;
 
-      if (hasX() != other.hasX()) return false;
-      if (hasX()) {
-        if (getX()
-            != other.getX()) return false;
+      if (hasDir() != other.hasDir()) return false;
+      if (hasDir()) {
+        if (getDir()
+            != other.getDir()) return false;
       }
-      if (hasY() != other.hasY()) return false;
-      if (hasY()) {
-        if (getY()
-            != other.getY()) return false;
+      if (hasCtime() != other.hasCtime()) return false;
+      if (hasCtime()) {
+        if (getCtime()
+            != other.getCtime()) return false;
       }
-      if (hasZ() != other.hasZ()) return false;
-      if (hasZ()) {
-        if (getZ()
-            != other.getZ()) return false;
+      if (hasStime() != other.hasStime()) return false;
+      if (hasStime()) {
+        if (getStime()
+            != other.getStime()) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3173,86 +3177,88 @@ public final class PersonMove {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasX()) {
-        hash = (37 * hash) + X_FIELD_NUMBER;
-        hash = (53 * hash) + getX();
+      if (hasDir()) {
+        hash = (37 * hash) + DIR_FIELD_NUMBER;
+        hash = (53 * hash) + getDir();
       }
-      if (hasY()) {
-        hash = (37 * hash) + Y_FIELD_NUMBER;
-        hash = (53 * hash) + getY();
+      if (hasCtime()) {
+        hash = (37 * hash) + CTIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getCtime());
       }
-      if (hasZ()) {
-        hash = (37 * hash) + Z_FIELD_NUMBER;
-        hash = (53 * hash) + getZ();
+      if (hasStime()) {
+        hash = (37 * hash) + STIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getStime());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(byte[] data)
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(java.io.InputStream input)
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseDelimitedFrom(java.io.InputStream input)
+    public static first.com.protocol.move.PersonMove.MoveInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseDelimitedFrom(
+    public static first.com.protocol.move.PersonMove.MoveInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 parseFrom(
+    public static first.com.protocol.move.PersonMove.MoveInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3265,7 +3271,7 @@ public final class PersonMove {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(first.com.protocol.move.PersonMove.PlayerFPoint3 prototype) {
+    public static Builder newBuilder(first.com.protocol.move.PersonMove.MoveInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3281,26 +3287,30 @@ public final class PersonMove {
       return builder;
     }
     /**
-     * Protobuf type {@code move.PlayerFPoint3}
+     * <pre>
+     *移動实体
+     * </pre>
+     *
+     * Protobuf type {@code move.MoveInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:move.PlayerFPoint3)
-        first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder {
+        // @@protoc_insertion_point(builder_implements:move.MoveInfo)
+        first.com.protocol.move.PersonMove.MoveInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_descriptor;
+        return first.com.protocol.move.PersonMove.internal_static_move_MoveInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_fieldAccessorTable
+        return first.com.protocol.move.PersonMove.internal_static_move_MoveInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                first.com.protocol.move.PersonMove.PlayerFPoint3.class, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder.class);
+                first.com.protocol.move.PersonMove.MoveInfo.class, first.com.protocol.move.PersonMove.MoveInfo.Builder.class);
       }
 
-      // Construct using first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder()
+      // Construct using first.com.protocol.move.PersonMove.MoveInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3318,11 +3328,11 @@ public final class PersonMove {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        x_ = 0;
+        dir_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        y_ = 0;
+        ctime_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
-        z_ = 0;
+        stime_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
@@ -3330,17 +3340,17 @@ public final class PersonMove {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return first.com.protocol.move.PersonMove.internal_static_move_PlayerFPoint3_descriptor;
+        return first.com.protocol.move.PersonMove.internal_static_move_MoveInfo_descriptor;
       }
 
       @java.lang.Override
-      public first.com.protocol.move.PersonMove.PlayerFPoint3 getDefaultInstanceForType() {
-        return first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance();
+      public first.com.protocol.move.PersonMove.MoveInfo getDefaultInstanceForType() {
+        return first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance();
       }
 
       @java.lang.Override
-      public first.com.protocol.move.PersonMove.PlayerFPoint3 build() {
-        first.com.protocol.move.PersonMove.PlayerFPoint3 result = buildPartial();
+      public first.com.protocol.move.PersonMove.MoveInfo build() {
+        first.com.protocol.move.PersonMove.MoveInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3348,20 +3358,20 @@ public final class PersonMove {
       }
 
       @java.lang.Override
-      public first.com.protocol.move.PersonMove.PlayerFPoint3 buildPartial() {
-        first.com.protocol.move.PersonMove.PlayerFPoint3 result = new first.com.protocol.move.PersonMove.PlayerFPoint3(this);
+      public first.com.protocol.move.PersonMove.MoveInfo buildPartial() {
+        first.com.protocol.move.PersonMove.MoveInfo result = new first.com.protocol.move.PersonMove.MoveInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.x_ = x_;
+          result.dir_ = dir_;
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.y_ = y_;
+          result.ctime_ = ctime_;
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.z_ = z_;
+          result.stime_ = stime_;
           to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ = to_bitField0_;
@@ -3403,24 +3413,24 @@ public final class PersonMove {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof first.com.protocol.move.PersonMove.PlayerFPoint3) {
-          return mergeFrom((first.com.protocol.move.PersonMove.PlayerFPoint3)other);
+        if (other instanceof first.com.protocol.move.PersonMove.MoveInfo) {
+          return mergeFrom((first.com.protocol.move.PersonMove.MoveInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(first.com.protocol.move.PersonMove.PlayerFPoint3 other) {
-        if (other == first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) return this;
-        if (other.hasX()) {
-          setX(other.getX());
+      public Builder mergeFrom(first.com.protocol.move.PersonMove.MoveInfo other) {
+        if (other == first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance()) return this;
+        if (other.hasDir()) {
+          setDir(other.getDir());
         }
-        if (other.hasY()) {
-          setY(other.getY());
+        if (other.hasCtime()) {
+          setCtime(other.getCtime());
         }
-        if (other.hasZ()) {
-          setZ(other.getZ());
+        if (other.hasStime()) {
+          setStime(other.getStime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3437,11 +3447,11 @@ public final class PersonMove {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        first.com.protocol.move.PersonMove.PlayerFPoint3 parsedMessage = null;
+        first.com.protocol.move.PersonMove.MoveInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (first.com.protocol.move.PersonMove.PlayerFPoint3) e.getUnfinishedMessage();
+          parsedMessage = (first.com.protocol.move.PersonMove.MoveInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3452,113 +3462,113 @@ public final class PersonMove {
       }
       private int bitField0_;
 
-      private int x_ ;
+      private int dir_ ;
       /**
-       * <code>optional int32 x = 1;</code>
-       * @return Whether the x field is set.
+       * <code>optional int32 dir = 2;</code>
+       * @return Whether the dir field is set.
        */
-      public boolean hasX() {
+      public boolean hasDir() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>optional int32 x = 1;</code>
-       * @return The x.
+       * <code>optional int32 dir = 2;</code>
+       * @return The dir.
        */
-      public int getX() {
-        return x_;
+      public int getDir() {
+        return dir_;
       }
       /**
-       * <code>optional int32 x = 1;</code>
-       * @param value The x to set.
+       * <code>optional int32 dir = 2;</code>
+       * @param value The dir to set.
        * @return This builder for chaining.
        */
-      public Builder setX(int value) {
+      public Builder setDir(int value) {
         bitField0_ |= 0x00000001;
-        x_ = value;
+        dir_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 x = 1;</code>
+       * <code>optional int32 dir = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearX() {
+      public Builder clearDir() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        x_ = 0;
+        dir_ = 0;
         onChanged();
         return this;
       }
 
-      private int y_ ;
+      private long ctime_ ;
       /**
-       * <code>optional int32 y = 2;</code>
-       * @return Whether the y field is set.
+       * <code>optional int64 ctime = 3;</code>
+       * @return Whether the ctime field is set.
        */
-      public boolean hasY() {
+      public boolean hasCtime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional int32 y = 2;</code>
-       * @return The y.
+       * <code>optional int64 ctime = 3;</code>
+       * @return The ctime.
        */
-      public int getY() {
-        return y_;
+      public long getCtime() {
+        return ctime_;
       }
       /**
-       * <code>optional int32 y = 2;</code>
-       * @param value The y to set.
+       * <code>optional int64 ctime = 3;</code>
+       * @param value The ctime to set.
        * @return This builder for chaining.
        */
-      public Builder setY(int value) {
+      public Builder setCtime(long value) {
         bitField0_ |= 0x00000002;
-        y_ = value;
+        ctime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 y = 2;</code>
+       * <code>optional int64 ctime = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearY() {
+      public Builder clearCtime() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        y_ = 0;
+        ctime_ = 0L;
         onChanged();
         return this;
       }
 
-      private int z_ ;
+      private long stime_ ;
       /**
-       * <code>optional int32 z = 3;</code>
-       * @return Whether the z field is set.
+       * <code>optional int64 stime = 4;</code>
+       * @return Whether the stime field is set.
        */
-      public boolean hasZ() {
+      public boolean hasStime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>optional int32 z = 3;</code>
-       * @return The z.
+       * <code>optional int64 stime = 4;</code>
+       * @return The stime.
        */
-      public int getZ() {
-        return z_;
+      public long getStime() {
+        return stime_;
       }
       /**
-       * <code>optional int32 z = 3;</code>
-       * @param value The z to set.
+       * <code>optional int64 stime = 4;</code>
+       * @param value The stime to set.
        * @return This builder for chaining.
        */
-      public Builder setZ(int value) {
+      public Builder setStime(long value) {
         bitField0_ |= 0x00000004;
-        z_ = value;
+        stime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 z = 3;</code>
+       * <code>optional int64 stime = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearZ() {
+      public Builder clearStime() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        z_ = 0;
+        stime_ = 0L;
         onChanged();
         return this;
       }
@@ -3575,41 +3585,41 @@ public final class PersonMove {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:move.PlayerFPoint3)
+      // @@protoc_insertion_point(builder_scope:move.MoveInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:move.PlayerFPoint3)
-    private static final first.com.protocol.move.PersonMove.PlayerFPoint3 DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:move.MoveInfo)
+    private static final first.com.protocol.move.PersonMove.MoveInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new first.com.protocol.move.PersonMove.PlayerFPoint3();
+      DEFAULT_INSTANCE = new first.com.protocol.move.PersonMove.MoveInfo();
     }
 
-    public static first.com.protocol.move.PersonMove.PlayerFPoint3 getDefaultInstance() {
+    public static first.com.protocol.move.PersonMove.MoveInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayerFPoint3>
-        PARSER = new com.google.protobuf.AbstractParser<PlayerFPoint3>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MoveInfo>
+        PARSER = new com.google.protobuf.AbstractParser<MoveInfo>() {
       @java.lang.Override
-      public PlayerFPoint3 parsePartialFrom(
+      public MoveInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerFPoint3(input, extensionRegistry);
+        return new MoveInfo(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<PlayerFPoint3> parser() {
+    public static com.google.protobuf.Parser<MoveInfo> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PlayerFPoint3> getParserForType() {
+    public com.google.protobuf.Parser<MoveInfo> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public first.com.protocol.move.PersonMove.PlayerFPoint3 getDefaultInstanceForType() {
+    public first.com.protocol.move.PersonMove.MoveInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3631,34 +3641,19 @@ public final class PersonMove {
     long getPlayerId();
 
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-     * @return Whether the pos field is set.
+     * <code>optional .move.MoveInfo move = 2;</code>
+     * @return Whether the move field is set.
      */
-    boolean hasPos();
+    boolean hasMove();
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-     * @return The pos.
+     * <code>optional .move.MoveInfo move = 2;</code>
+     * @return The move.
      */
-    first.com.protocol.move.PersonMove.PlayerFPoint3 getPos();
+    first.com.protocol.move.PersonMove.MoveInfo getMove();
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * <code>optional .move.MoveInfo move = 2;</code>
      */
-    first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder();
-
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     * @return Whether the dir field is set.
-     */
-    boolean hasDir();
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     * @return The dir.
-     */
-    first.com.protocol.move.PersonMove.PlayerFPoint3 getDir();
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     */
-    first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder();
+    first.com.protocol.move.PersonMove.MoveInfoOrBuilder getMoveOrBuilder();
   }
   /**
    * <pre>
@@ -3716,29 +3711,16 @@ public final class PersonMove {
               break;
             }
             case 18: {
-              first.com.protocol.move.PersonMove.PlayerFPoint3.Builder subBuilder = null;
+              first.com.protocol.move.PersonMove.MoveInfo.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = pos_.toBuilder();
+                subBuilder = move_.toBuilder();
               }
-              pos_ = input.readMessage(first.com.protocol.move.PersonMove.PlayerFPoint3.PARSER, extensionRegistry);
+              move_ = input.readMessage(first.com.protocol.move.PersonMove.MoveInfo.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(move_);
+                move_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000002;
-              break;
-            }
-            case 26: {
-              first.com.protocol.move.PersonMove.PlayerFPoint3.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = dir_.toBuilder();
-              }
-              dir_ = input.readMessage(first.com.protocol.move.PersonMove.PlayerFPoint3.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dir_);
-                dir_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
               break;
             }
             default: {
@@ -3791,50 +3773,27 @@ public final class PersonMove {
       return playerId_;
     }
 
-    public static final int POS_FIELD_NUMBER = 2;
-    private first.com.protocol.move.PersonMove.PlayerFPoint3 pos_;
+    public static final int MOVE_FIELD_NUMBER = 2;
+    private first.com.protocol.move.PersonMove.MoveInfo move_;
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-     * @return Whether the pos field is set.
+     * <code>optional .move.MoveInfo move = 2;</code>
+     * @return Whether the move field is set.
      */
-    public boolean hasPos() {
+    public boolean hasMove() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-     * @return The pos.
+     * <code>optional .move.MoveInfo move = 2;</code>
+     * @return The move.
      */
-    public first.com.protocol.move.PersonMove.PlayerFPoint3 getPos() {
-      return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+    public first.com.protocol.move.PersonMove.MoveInfo getMove() {
+      return move_ == null ? first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance() : move_;
     }
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * <code>optional .move.MoveInfo move = 2;</code>
      */
-    public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder() {
-      return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
-    }
-
-    public static final int DIR_FIELD_NUMBER = 3;
-    private first.com.protocol.move.PersonMove.PlayerFPoint3 dir_;
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     * @return Whether the dir field is set.
-     */
-    public boolean hasDir() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     * @return The dir.
-     */
-    public first.com.protocol.move.PersonMove.PlayerFPoint3 getDir() {
-      return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
-    }
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     */
-    public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder() {
-      return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+    public first.com.protocol.move.PersonMove.MoveInfoOrBuilder getMoveOrBuilder() {
+      return move_ == null ? first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance() : move_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3855,10 +3814,7 @@ public final class PersonMove {
         output.writeInt64(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(2, getPos());
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeMessage(3, getDir());
+        output.writeMessage(2, getMove());
       }
       unknownFields.writeTo(output);
     }
@@ -3875,11 +3831,7 @@ public final class PersonMove {
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getPos());
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getDir());
+          .computeMessageSize(2, getMove());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3901,15 +3853,10 @@ public final class PersonMove {
         if (getPlayerId()
             != other.getPlayerId()) return false;
       }
-      if (hasPos() != other.hasPos()) return false;
-      if (hasPos()) {
-        if (!getPos()
-            .equals(other.getPos())) return false;
-      }
-      if (hasDir() != other.hasDir()) return false;
-      if (hasDir()) {
-        if (!getDir()
-            .equals(other.getDir())) return false;
+      if (hasMove() != other.hasMove()) return false;
+      if (hasMove()) {
+        if (!getMove()
+            .equals(other.getMove())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3927,13 +3874,9 @@ public final class PersonMove {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getPlayerId());
       }
-      if (hasPos()) {
-        hash = (37 * hash) + POS_FIELD_NUMBER;
-        hash = (53 * hash) + getPos().hashCode();
-      }
-      if (hasDir()) {
-        hash = (37 * hash) + DIR_FIELD_NUMBER;
-        hash = (53 * hash) + getDir().hashCode();
+      if (hasMove()) {
+        hash = (37 * hash) + MOVE_FIELD_NUMBER;
+        hash = (53 * hash) + getMove().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4067,8 +4010,7 @@ public final class PersonMove {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getPosFieldBuilder();
-          getDirFieldBuilder();
+          getMoveFieldBuilder();
         }
       }
       @java.lang.Override
@@ -4076,18 +4018,12 @@ public final class PersonMove {
         super.clear();
         playerId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (posBuilder_ == null) {
-          pos_ = null;
+        if (moveBuilder_ == null) {
+          move_ = null;
         } else {
-          posBuilder_.clear();
+          moveBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
-        if (dirBuilder_ == null) {
-          dir_ = null;
-        } else {
-          dirBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -4121,20 +4057,12 @@ public final class PersonMove {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (posBuilder_ == null) {
-            result.pos_ = pos_;
+          if (moveBuilder_ == null) {
+            result.move_ = move_;
           } else {
-            result.pos_ = posBuilder_.build();
+            result.move_ = moveBuilder_.build();
           }
           to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (dirBuilder_ == null) {
-            result.dir_ = dir_;
-          } else {
-            result.dir_ = dirBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -4188,11 +4116,8 @@ public final class PersonMove {
         if (other.hasPlayerId()) {
           setPlayerId(other.getPlayerId());
         }
-        if (other.hasPos()) {
-          mergePos(other.getPos());
-        }
-        if (other.hasDir()) {
-          mergeDir(other.getDir());
+        if (other.hasMove()) {
+          mergeMove(other.getMove());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4261,244 +4186,124 @@ public final class PersonMove {
         return this;
       }
 
-      private first.com.protocol.move.PersonMove.PlayerFPoint3 pos_;
+      private first.com.protocol.move.PersonMove.MoveInfo move_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> posBuilder_;
+          first.com.protocol.move.PersonMove.MoveInfo, first.com.protocol.move.PersonMove.MoveInfo.Builder, first.com.protocol.move.PersonMove.MoveInfoOrBuilder> moveBuilder_;
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-       * @return Whether the pos field is set.
+       * <code>optional .move.MoveInfo move = 2;</code>
+       * @return Whether the move field is set.
        */
-      public boolean hasPos() {
+      public boolean hasMove() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-       * @return The pos.
+       * <code>optional .move.MoveInfo move = 2;</code>
+       * @return The move.
        */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3 getPos() {
-        if (posBuilder_ == null) {
-          return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+      public first.com.protocol.move.PersonMove.MoveInfo getMove() {
+        if (moveBuilder_ == null) {
+          return move_ == null ? first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance() : move_;
         } else {
-          return posBuilder_.getMessage();
+          return moveBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public Builder setPos(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
-        if (posBuilder_ == null) {
+      public Builder setMove(first.com.protocol.move.PersonMove.MoveInfo value) {
+        if (moveBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          pos_ = value;
+          move_ = value;
           onChanged();
         } else {
-          posBuilder_.setMessage(value);
+          moveBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public Builder setPos(
-          first.com.protocol.move.PersonMove.PlayerFPoint3.Builder builderForValue) {
-        if (posBuilder_ == null) {
-          pos_ = builderForValue.build();
+      public Builder setMove(
+          first.com.protocol.move.PersonMove.MoveInfo.Builder builderForValue) {
+        if (moveBuilder_ == null) {
+          move_ = builderForValue.build();
           onChanged();
         } else {
-          posBuilder_.setMessage(builderForValue.build());
+          moveBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public Builder mergePos(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
-        if (posBuilder_ == null) {
+      public Builder mergeMove(first.com.protocol.move.PersonMove.MoveInfo value) {
+        if (moveBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              pos_ != null &&
-              pos_ != first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) {
-            pos_ =
-              first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder(pos_).mergeFrom(value).buildPartial();
+              move_ != null &&
+              move_ != first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance()) {
+            move_ =
+              first.com.protocol.move.PersonMove.MoveInfo.newBuilder(move_).mergeFrom(value).buildPartial();
           } else {
-            pos_ = value;
+            move_ = value;
           }
           onChanged();
         } else {
-          posBuilder_.mergeFrom(value);
+          moveBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
+      public Builder clearMove() {
+        if (moveBuilder_ == null) {
+          move_ = null;
           onChanged();
         } else {
-          posBuilder_.clear();
+          moveBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3.Builder getPosBuilder() {
+      public first.com.protocol.move.PersonMove.MoveInfo.Builder getMoveBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
-        return getPosFieldBuilder().getBuilder();
+        return getMoveFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder() {
-        if (posBuilder_ != null) {
-          return posBuilder_.getMessageOrBuilder();
+      public first.com.protocol.move.PersonMove.MoveInfoOrBuilder getMoveOrBuilder() {
+        if (moveBuilder_ != null) {
+          return moveBuilder_.getMessageOrBuilder();
         } else {
-          return pos_ == null ?
-              first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+          return move_ == null ?
+              first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance() : move_;
         }
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> 
-          getPosFieldBuilder() {
-        if (posBuilder_ == null) {
-          posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder>(
-                  getPos(),
+          first.com.protocol.move.PersonMove.MoveInfo, first.com.protocol.move.PersonMove.MoveInfo.Builder, first.com.protocol.move.PersonMove.MoveInfoOrBuilder> 
+          getMoveFieldBuilder() {
+        if (moveBuilder_ == null) {
+          moveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              first.com.protocol.move.PersonMove.MoveInfo, first.com.protocol.move.PersonMove.MoveInfo.Builder, first.com.protocol.move.PersonMove.MoveInfoOrBuilder>(
+                  getMove(),
                   getParentForChildren(),
                   isClean());
-          pos_ = null;
+          move_ = null;
         }
-        return posBuilder_;
-      }
-
-      private first.com.protocol.move.PersonMove.PlayerFPoint3 dir_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> dirBuilder_;
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       * @return Whether the dir field is set.
-       */
-      public boolean hasDir() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       * @return The dir.
-       */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3 getDir() {
-        if (dirBuilder_ == null) {
-          return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
-        } else {
-          return dirBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public Builder setDir(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
-        if (dirBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dir_ = value;
-          onChanged();
-        } else {
-          dirBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public Builder setDir(
-          first.com.protocol.move.PersonMove.PlayerFPoint3.Builder builderForValue) {
-        if (dirBuilder_ == null) {
-          dir_ = builderForValue.build();
-          onChanged();
-        } else {
-          dirBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public Builder mergeDir(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
-        if (dirBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-              dir_ != null &&
-              dir_ != first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) {
-            dir_ =
-              first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder(dir_).mergeFrom(value).buildPartial();
-          } else {
-            dir_ = value;
-          }
-          onChanged();
-        } else {
-          dirBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public Builder clearDir() {
-        if (dirBuilder_ == null) {
-          dir_ = null;
-          onChanged();
-        } else {
-          dirBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3.Builder getDirBuilder() {
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return getDirFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder() {
-        if (dirBuilder_ != null) {
-          return dirBuilder_.getMessageOrBuilder();
-        } else {
-          return dir_ == null ?
-              first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
-        }
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> 
-          getDirFieldBuilder() {
-        if (dirBuilder_ == null) {
-          dirBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder>(
-                  getDir(),
-                  getParentForChildren(),
-                  isClean());
-          dir_ = null;
-        }
-        return dirBuilder_;
+        return moveBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4569,34 +4374,19 @@ public final class PersonMove {
     long getPlayerId();
 
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-     * @return Whether the pos field is set.
+     * <code>optional .move.MoveInfo move = 2;</code>
+     * @return Whether the move field is set.
      */
-    boolean hasPos();
+    boolean hasMove();
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-     * @return The pos.
+     * <code>optional .move.MoveInfo move = 2;</code>
+     * @return The move.
      */
-    first.com.protocol.move.PersonMove.PlayerFPoint3 getPos();
+    first.com.protocol.move.PersonMove.MoveInfo getMove();
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * <code>optional .move.MoveInfo move = 2;</code>
      */
-    first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder();
-
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     * @return Whether the dir field is set.
-     */
-    boolean hasDir();
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     * @return The dir.
-     */
-    first.com.protocol.move.PersonMove.PlayerFPoint3 getDir();
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     */
-    first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder();
+    first.com.protocol.move.PersonMove.MoveInfoOrBuilder getMoveOrBuilder();
   }
   /**
    * <pre>
@@ -4654,29 +4444,16 @@ public final class PersonMove {
               break;
             }
             case 18: {
-              first.com.protocol.move.PersonMove.PlayerFPoint3.Builder subBuilder = null;
+              first.com.protocol.move.PersonMove.MoveInfo.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = pos_.toBuilder();
+                subBuilder = move_.toBuilder();
               }
-              pos_ = input.readMessage(first.com.protocol.move.PersonMove.PlayerFPoint3.PARSER, extensionRegistry);
+              move_ = input.readMessage(first.com.protocol.move.PersonMove.MoveInfo.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(move_);
+                move_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000002;
-              break;
-            }
-            case 26: {
-              first.com.protocol.move.PersonMove.PlayerFPoint3.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = dir_.toBuilder();
-              }
-              dir_ = input.readMessage(first.com.protocol.move.PersonMove.PlayerFPoint3.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dir_);
-                dir_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
               break;
             }
             default: {
@@ -4729,50 +4506,27 @@ public final class PersonMove {
       return playerId_;
     }
 
-    public static final int POS_FIELD_NUMBER = 2;
-    private first.com.protocol.move.PersonMove.PlayerFPoint3 pos_;
+    public static final int MOVE_FIELD_NUMBER = 2;
+    private first.com.protocol.move.PersonMove.MoveInfo move_;
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-     * @return Whether the pos field is set.
+     * <code>optional .move.MoveInfo move = 2;</code>
+     * @return Whether the move field is set.
      */
-    public boolean hasPos() {
+    public boolean hasMove() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-     * @return The pos.
+     * <code>optional .move.MoveInfo move = 2;</code>
+     * @return The move.
      */
-    public first.com.protocol.move.PersonMove.PlayerFPoint3 getPos() {
-      return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+    public first.com.protocol.move.PersonMove.MoveInfo getMove() {
+      return move_ == null ? first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance() : move_;
     }
     /**
-     * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+     * <code>optional .move.MoveInfo move = 2;</code>
      */
-    public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder() {
-      return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
-    }
-
-    public static final int DIR_FIELD_NUMBER = 3;
-    private first.com.protocol.move.PersonMove.PlayerFPoint3 dir_;
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     * @return Whether the dir field is set.
-     */
-    public boolean hasDir() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     * @return The dir.
-     */
-    public first.com.protocol.move.PersonMove.PlayerFPoint3 getDir() {
-      return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
-    }
-    /**
-     * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-     */
-    public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder() {
-      return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
+    public first.com.protocol.move.PersonMove.MoveInfoOrBuilder getMoveOrBuilder() {
+      return move_ == null ? first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance() : move_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4793,10 +4547,7 @@ public final class PersonMove {
         output.writeInt64(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(2, getPos());
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeMessage(3, getDir());
+        output.writeMessage(2, getMove());
       }
       unknownFields.writeTo(output);
     }
@@ -4813,11 +4564,7 @@ public final class PersonMove {
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getPos());
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getDir());
+          .computeMessageSize(2, getMove());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4839,15 +4586,10 @@ public final class PersonMove {
         if (getPlayerId()
             != other.getPlayerId()) return false;
       }
-      if (hasPos() != other.hasPos()) return false;
-      if (hasPos()) {
-        if (!getPos()
-            .equals(other.getPos())) return false;
-      }
-      if (hasDir() != other.hasDir()) return false;
-      if (hasDir()) {
-        if (!getDir()
-            .equals(other.getDir())) return false;
+      if (hasMove() != other.hasMove()) return false;
+      if (hasMove()) {
+        if (!getMove()
+            .equals(other.getMove())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -4865,13 +4607,9 @@ public final class PersonMove {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getPlayerId());
       }
-      if (hasPos()) {
-        hash = (37 * hash) + POS_FIELD_NUMBER;
-        hash = (53 * hash) + getPos().hashCode();
-      }
-      if (hasDir()) {
-        hash = (37 * hash) + DIR_FIELD_NUMBER;
-        hash = (53 * hash) + getDir().hashCode();
+      if (hasMove()) {
+        hash = (37 * hash) + MOVE_FIELD_NUMBER;
+        hash = (53 * hash) + getMove().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5005,8 +4743,7 @@ public final class PersonMove {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getPosFieldBuilder();
-          getDirFieldBuilder();
+          getMoveFieldBuilder();
         }
       }
       @java.lang.Override
@@ -5014,18 +4751,12 @@ public final class PersonMove {
         super.clear();
         playerId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (posBuilder_ == null) {
-          pos_ = null;
+        if (moveBuilder_ == null) {
+          move_ = null;
         } else {
-          posBuilder_.clear();
+          moveBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
-        if (dirBuilder_ == null) {
-          dir_ = null;
-        } else {
-          dirBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -5059,20 +4790,12 @@ public final class PersonMove {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (posBuilder_ == null) {
-            result.pos_ = pos_;
+          if (moveBuilder_ == null) {
+            result.move_ = move_;
           } else {
-            result.pos_ = posBuilder_.build();
+            result.move_ = moveBuilder_.build();
           }
           to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (dirBuilder_ == null) {
-            result.dir_ = dir_;
-          } else {
-            result.dir_ = dirBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -5126,11 +4849,8 @@ public final class PersonMove {
         if (other.hasPlayerId()) {
           setPlayerId(other.getPlayerId());
         }
-        if (other.hasPos()) {
-          mergePos(other.getPos());
-        }
-        if (other.hasDir()) {
-          mergeDir(other.getDir());
+        if (other.hasMove()) {
+          mergeMove(other.getMove());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5199,244 +4919,124 @@ public final class PersonMove {
         return this;
       }
 
-      private first.com.protocol.move.PersonMove.PlayerFPoint3 pos_;
+      private first.com.protocol.move.PersonMove.MoveInfo move_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> posBuilder_;
+          first.com.protocol.move.PersonMove.MoveInfo, first.com.protocol.move.PersonMove.MoveInfo.Builder, first.com.protocol.move.PersonMove.MoveInfoOrBuilder> moveBuilder_;
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-       * @return Whether the pos field is set.
+       * <code>optional .move.MoveInfo move = 2;</code>
+       * @return Whether the move field is set.
        */
-      public boolean hasPos() {
+      public boolean hasMove() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
-       * @return The pos.
+       * <code>optional .move.MoveInfo move = 2;</code>
+       * @return The move.
        */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3 getPos() {
-        if (posBuilder_ == null) {
-          return pos_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+      public first.com.protocol.move.PersonMove.MoveInfo getMove() {
+        if (moveBuilder_ == null) {
+          return move_ == null ? first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance() : move_;
         } else {
-          return posBuilder_.getMessage();
+          return moveBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public Builder setPos(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
-        if (posBuilder_ == null) {
+      public Builder setMove(first.com.protocol.move.PersonMove.MoveInfo value) {
+        if (moveBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          pos_ = value;
+          move_ = value;
           onChanged();
         } else {
-          posBuilder_.setMessage(value);
+          moveBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public Builder setPos(
-          first.com.protocol.move.PersonMove.PlayerFPoint3.Builder builderForValue) {
-        if (posBuilder_ == null) {
-          pos_ = builderForValue.build();
+      public Builder setMove(
+          first.com.protocol.move.PersonMove.MoveInfo.Builder builderForValue) {
+        if (moveBuilder_ == null) {
+          move_ = builderForValue.build();
           onChanged();
         } else {
-          posBuilder_.setMessage(builderForValue.build());
+          moveBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public Builder mergePos(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
-        if (posBuilder_ == null) {
+      public Builder mergeMove(first.com.protocol.move.PersonMove.MoveInfo value) {
+        if (moveBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              pos_ != null &&
-              pos_ != first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) {
-            pos_ =
-              first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder(pos_).mergeFrom(value).buildPartial();
+              move_ != null &&
+              move_ != first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance()) {
+            move_ =
+              first.com.protocol.move.PersonMove.MoveInfo.newBuilder(move_).mergeFrom(value).buildPartial();
           } else {
-            pos_ = value;
+            move_ = value;
           }
           onChanged();
         } else {
-          posBuilder_.mergeFrom(value);
+          moveBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
+      public Builder clearMove() {
+        if (moveBuilder_ == null) {
+          move_ = null;
           onChanged();
         } else {
-          posBuilder_.clear();
+          moveBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3.Builder getPosBuilder() {
+      public first.com.protocol.move.PersonMove.MoveInfo.Builder getMoveBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
-        return getPosFieldBuilder().getBuilder();
+        return getMoveFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getPosOrBuilder() {
-        if (posBuilder_ != null) {
-          return posBuilder_.getMessageOrBuilder();
+      public first.com.protocol.move.PersonMove.MoveInfoOrBuilder getMoveOrBuilder() {
+        if (moveBuilder_ != null) {
+          return moveBuilder_.getMessageOrBuilder();
         } else {
-          return pos_ == null ?
-              first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : pos_;
+          return move_ == null ?
+              first.com.protocol.move.PersonMove.MoveInfo.getDefaultInstance() : move_;
         }
       }
       /**
-       * <code>optional .move.PlayerFPoint3 pos = 2;</code>
+       * <code>optional .move.MoveInfo move = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> 
-          getPosFieldBuilder() {
-        if (posBuilder_ == null) {
-          posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder>(
-                  getPos(),
+          first.com.protocol.move.PersonMove.MoveInfo, first.com.protocol.move.PersonMove.MoveInfo.Builder, first.com.protocol.move.PersonMove.MoveInfoOrBuilder> 
+          getMoveFieldBuilder() {
+        if (moveBuilder_ == null) {
+          moveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              first.com.protocol.move.PersonMove.MoveInfo, first.com.protocol.move.PersonMove.MoveInfo.Builder, first.com.protocol.move.PersonMove.MoveInfoOrBuilder>(
+                  getMove(),
                   getParentForChildren(),
                   isClean());
-          pos_ = null;
+          move_ = null;
         }
-        return posBuilder_;
-      }
-
-      private first.com.protocol.move.PersonMove.PlayerFPoint3 dir_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> dirBuilder_;
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       * @return Whether the dir field is set.
-       */
-      public boolean hasDir() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       * @return The dir.
-       */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3 getDir() {
-        if (dirBuilder_ == null) {
-          return dir_ == null ? first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
-        } else {
-          return dirBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public Builder setDir(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
-        if (dirBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dir_ = value;
-          onChanged();
-        } else {
-          dirBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public Builder setDir(
-          first.com.protocol.move.PersonMove.PlayerFPoint3.Builder builderForValue) {
-        if (dirBuilder_ == null) {
-          dir_ = builderForValue.build();
-          onChanged();
-        } else {
-          dirBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public Builder mergeDir(first.com.protocol.move.PersonMove.PlayerFPoint3 value) {
-        if (dirBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-              dir_ != null &&
-              dir_ != first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance()) {
-            dir_ =
-              first.com.protocol.move.PersonMove.PlayerFPoint3.newBuilder(dir_).mergeFrom(value).buildPartial();
-          } else {
-            dir_ = value;
-          }
-          onChanged();
-        } else {
-          dirBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public Builder clearDir() {
-        if (dirBuilder_ == null) {
-          dir_ = null;
-          onChanged();
-        } else {
-          dirBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3.Builder getDirBuilder() {
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return getDirFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      public first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder getDirOrBuilder() {
-        if (dirBuilder_ != null) {
-          return dirBuilder_.getMessageOrBuilder();
-        } else {
-          return dir_ == null ?
-              first.com.protocol.move.PersonMove.PlayerFPoint3.getDefaultInstance() : dir_;
-        }
-      }
-      /**
-       * <code>optional .move.PlayerFPoint3 dir = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder> 
-          getDirFieldBuilder() {
-        if (dirBuilder_ == null) {
-          dirBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              first.com.protocol.move.PersonMove.PlayerFPoint3, first.com.protocol.move.PersonMove.PlayerFPoint3.Builder, first.com.protocol.move.PersonMove.PlayerFPoint3OrBuilder>(
-                  getDir(),
-                  getParentForChildren(),
-                  isClean());
-          dir_ = null;
-        }
-        return dirBuilder_;
+        return moveBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5491,1145 +5091,6 @@ public final class PersonMove {
 
   }
 
-  public interface CSUDPOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:move.CSUDP)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional int64 playerId = 1;</code>
-     * @return Whether the playerId field is set.
-     */
-    boolean hasPlayerId();
-    /**
-     * <code>optional int64 playerId = 1;</code>
-     * @return The playerId.
-     */
-    long getPlayerId();
-  }
-  /**
-   * <pre>
-   *4-连接udp
-   * </pre>
-   *
-   * Protobuf type {@code move.CSUDP}
-   */
-  public  static final class CSUDP extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:move.CSUDP)
-      CSUDPOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CSUDP.newBuilder() to construct.
-    private CSUDP(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CSUDP() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new CSUDP();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CSUDP(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              playerId_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return first.com.protocol.move.PersonMove.internal_static_move_CSUDP_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return first.com.protocol.move.PersonMove.internal_static_move_CSUDP_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              first.com.protocol.move.PersonMove.CSUDP.class, first.com.protocol.move.PersonMove.CSUDP.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int PLAYERID_FIELD_NUMBER = 1;
-    private long playerId_;
-    /**
-     * <code>optional int64 playerId = 1;</code>
-     * @return Whether the playerId field is set.
-     */
-    public boolean hasPlayerId() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional int64 playerId = 1;</code>
-     * @return The playerId.
-     */
-    public long getPlayerId() {
-      return playerId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt64(1, playerId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, playerId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof first.com.protocol.move.PersonMove.CSUDP)) {
-        return super.equals(obj);
-      }
-      first.com.protocol.move.PersonMove.CSUDP other = (first.com.protocol.move.PersonMove.CSUDP) obj;
-
-      if (hasPlayerId() != other.hasPlayerId()) return false;
-      if (hasPlayerId()) {
-        if (getPlayerId()
-            != other.getPlayerId()) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasPlayerId()) {
-        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getPlayerId());
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static first.com.protocol.move.PersonMove.CSUDP parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(first.com.protocol.move.PersonMove.CSUDP prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     *4-连接udp
-     * </pre>
-     *
-     * Protobuf type {@code move.CSUDP}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:move.CSUDP)
-        first.com.protocol.move.PersonMove.CSUDPOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return first.com.protocol.move.PersonMove.internal_static_move_CSUDP_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return first.com.protocol.move.PersonMove.internal_static_move_CSUDP_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                first.com.protocol.move.PersonMove.CSUDP.class, first.com.protocol.move.PersonMove.CSUDP.Builder.class);
-      }
-
-      // Construct using first.com.protocol.move.PersonMove.CSUDP.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        playerId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return first.com.protocol.move.PersonMove.internal_static_move_CSUDP_descriptor;
-      }
-
-      @java.lang.Override
-      public first.com.protocol.move.PersonMove.CSUDP getDefaultInstanceForType() {
-        return first.com.protocol.move.PersonMove.CSUDP.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public first.com.protocol.move.PersonMove.CSUDP build() {
-        first.com.protocol.move.PersonMove.CSUDP result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public first.com.protocol.move.PersonMove.CSUDP buildPartial() {
-        first.com.protocol.move.PersonMove.CSUDP result = new first.com.protocol.move.PersonMove.CSUDP(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.playerId_ = playerId_;
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof first.com.protocol.move.PersonMove.CSUDP) {
-          return mergeFrom((first.com.protocol.move.PersonMove.CSUDP)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(first.com.protocol.move.PersonMove.CSUDP other) {
-        if (other == first.com.protocol.move.PersonMove.CSUDP.getDefaultInstance()) return this;
-        if (other.hasPlayerId()) {
-          setPlayerId(other.getPlayerId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        first.com.protocol.move.PersonMove.CSUDP parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (first.com.protocol.move.PersonMove.CSUDP) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private long playerId_ ;
-      /**
-       * <code>optional int64 playerId = 1;</code>
-       * @return Whether the playerId field is set.
-       */
-      public boolean hasPlayerId() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional int64 playerId = 1;</code>
-       * @return The playerId.
-       */
-      public long getPlayerId() {
-        return playerId_;
-      }
-      /**
-       * <code>optional int64 playerId = 1;</code>
-       * @param value The playerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayerId(long value) {
-        bitField0_ |= 0x00000001;
-        playerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 playerId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayerId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        playerId_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:move.CSUDP)
-    }
-
-    // @@protoc_insertion_point(class_scope:move.CSUDP)
-    private static final first.com.protocol.move.PersonMove.CSUDP DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new first.com.protocol.move.PersonMove.CSUDP();
-    }
-
-    public static first.com.protocol.move.PersonMove.CSUDP getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<CSUDP>
-        PARSER = new com.google.protobuf.AbstractParser<CSUDP>() {
-      @java.lang.Override
-      public CSUDP parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CSUDP(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CSUDP> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CSUDP> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public first.com.protocol.move.PersonMove.CSUDP getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SCUDPOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:move.SCUDP)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>repeated int64 playerId = 1;</code>
-     * @return A list containing the playerId.
-     */
-    java.util.List<java.lang.Long> getPlayerIdList();
-    /**
-     * <code>repeated int64 playerId = 1;</code>
-     * @return The count of playerId.
-     */
-    int getPlayerIdCount();
-    /**
-     * <code>repeated int64 playerId = 1;</code>
-     * @param index The index of the element to return.
-     * @return The playerId at the given index.
-     */
-    long getPlayerId(int index);
-  }
-  /**
-   * <pre>
-   *5-连接udp成功
-   * </pre>
-   *
-   * Protobuf type {@code move.SCUDP}
-   */
-  public  static final class SCUDP extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:move.SCUDP)
-      SCUDPOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SCUDP.newBuilder() to construct.
-    private SCUDP(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SCUDP() {
-      playerId_ = emptyLongList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SCUDP();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SCUDP(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                playerId_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              playerId_.addLong(input.readInt64());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                playerId_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                playerId_.addLong(input.readInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          playerId_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return first.com.protocol.move.PersonMove.internal_static_move_SCUDP_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return first.com.protocol.move.PersonMove.internal_static_move_SCUDP_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              first.com.protocol.move.PersonMove.SCUDP.class, first.com.protocol.move.PersonMove.SCUDP.Builder.class);
-    }
-
-    public static final int PLAYERID_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.LongList playerId_;
-    /**
-     * <code>repeated int64 playerId = 1;</code>
-     * @return A list containing the playerId.
-     */
-    public java.util.List<java.lang.Long>
-        getPlayerIdList() {
-      return playerId_;
-    }
-    /**
-     * <code>repeated int64 playerId = 1;</code>
-     * @return The count of playerId.
-     */
-    public int getPlayerIdCount() {
-      return playerId_.size();
-    }
-    /**
-     * <code>repeated int64 playerId = 1;</code>
-     * @param index The index of the element to return.
-     * @return The playerId at the given index.
-     */
-    public long getPlayerId(int index) {
-      return playerId_.getLong(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < playerId_.size(); i++) {
-        output.writeInt64(1, playerId_.getLong(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < playerId_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt64SizeNoTag(playerId_.getLong(i));
-        }
-        size += dataSize;
-        size += 1 * getPlayerIdList().size();
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof first.com.protocol.move.PersonMove.SCUDP)) {
-        return super.equals(obj);
-      }
-      first.com.protocol.move.PersonMove.SCUDP other = (first.com.protocol.move.PersonMove.SCUDP) obj;
-
-      if (!getPlayerIdList()
-          .equals(other.getPlayerIdList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getPlayerIdCount() > 0) {
-        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
-        hash = (53 * hash) + getPlayerIdList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static first.com.protocol.move.PersonMove.SCUDP parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(first.com.protocol.move.PersonMove.SCUDP prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     *5-连接udp成功
-     * </pre>
-     *
-     * Protobuf type {@code move.SCUDP}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:move.SCUDP)
-        first.com.protocol.move.PersonMove.SCUDPOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return first.com.protocol.move.PersonMove.internal_static_move_SCUDP_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return first.com.protocol.move.PersonMove.internal_static_move_SCUDP_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                first.com.protocol.move.PersonMove.SCUDP.class, first.com.protocol.move.PersonMove.SCUDP.Builder.class);
-      }
-
-      // Construct using first.com.protocol.move.PersonMove.SCUDP.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        playerId_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return first.com.protocol.move.PersonMove.internal_static_move_SCUDP_descriptor;
-      }
-
-      @java.lang.Override
-      public first.com.protocol.move.PersonMove.SCUDP getDefaultInstanceForType() {
-        return first.com.protocol.move.PersonMove.SCUDP.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public first.com.protocol.move.PersonMove.SCUDP build() {
-        first.com.protocol.move.PersonMove.SCUDP result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public first.com.protocol.move.PersonMove.SCUDP buildPartial() {
-        first.com.protocol.move.PersonMove.SCUDP result = new first.com.protocol.move.PersonMove.SCUDP(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          playerId_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.playerId_ = playerId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof first.com.protocol.move.PersonMove.SCUDP) {
-          return mergeFrom((first.com.protocol.move.PersonMove.SCUDP)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(first.com.protocol.move.PersonMove.SCUDP other) {
-        if (other == first.com.protocol.move.PersonMove.SCUDP.getDefaultInstance()) return this;
-        if (!other.playerId_.isEmpty()) {
-          if (playerId_.isEmpty()) {
-            playerId_ = other.playerId_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensurePlayerIdIsMutable();
-            playerId_.addAll(other.playerId_);
-          }
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        first.com.protocol.move.PersonMove.SCUDP parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (first.com.protocol.move.PersonMove.SCUDP) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.Internal.LongList playerId_ = emptyLongList();
-      private void ensurePlayerIdIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          playerId_ = mutableCopy(playerId_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated int64 playerId = 1;</code>
-       * @return A list containing the playerId.
-       */
-      public java.util.List<java.lang.Long>
-          getPlayerIdList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(playerId_) : playerId_;
-      }
-      /**
-       * <code>repeated int64 playerId = 1;</code>
-       * @return The count of playerId.
-       */
-      public int getPlayerIdCount() {
-        return playerId_.size();
-      }
-      /**
-       * <code>repeated int64 playerId = 1;</code>
-       * @param index The index of the element to return.
-       * @return The playerId at the given index.
-       */
-      public long getPlayerId(int index) {
-        return playerId_.getLong(index);
-      }
-      /**
-       * <code>repeated int64 playerId = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The playerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayerId(
-          int index, long value) {
-        ensurePlayerIdIsMutable();
-        playerId_.setLong(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int64 playerId = 1;</code>
-       * @param value The playerId to add.
-       * @return This builder for chaining.
-       */
-      public Builder addPlayerId(long value) {
-        ensurePlayerIdIsMutable();
-        playerId_.addLong(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int64 playerId = 1;</code>
-       * @param values The playerId to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllPlayerId(
-          java.lang.Iterable<? extends java.lang.Long> values) {
-        ensurePlayerIdIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, playerId_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int64 playerId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayerId() {
-        playerId_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:move.SCUDP)
-    }
-
-    // @@protoc_insertion_point(class_scope:move.SCUDP)
-    private static final first.com.protocol.move.PersonMove.SCUDP DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new first.com.protocol.move.PersonMove.SCUDP();
-    }
-
-    public static first.com.protocol.move.PersonMove.SCUDP getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<SCUDP>
-        PARSER = new com.google.protobuf.AbstractParser<SCUDP>() {
-      @java.lang.Override
-      public SCUDP parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SCUDP(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SCUDP> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SCUDP> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public first.com.protocol.move.PersonMove.SCUDP getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_move_Person_descriptor;
   private static final 
@@ -6646,10 +5107,10 @@ public final class PersonMove {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_move_AddressBook_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_move_PlayerFPoint3_descriptor;
+    internal_static_move_MoveInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_move_PlayerFPoint3_fieldAccessorTable;
+      internal_static_move_MoveInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_move_CSPlayerMove_descriptor;
   private static final 
@@ -6660,16 +5121,6 @@ public final class PersonMove {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_move_SCPlayerMove_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_move_CSUDP_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_move_CSUDP_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_move_SCUDP_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_move_SCUDP_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6685,16 +5136,13 @@ public final class PersonMove {
       "eNumber\022\016\n\006number\030\001 \002(\t\022*\n\004type\030\002 \001(\0162\026." +
       "move.Person.PhoneType:\004HOME\"+\n\tPhoneType" +
       "\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001\022\010\n\004WORK\020\002\"+\n\013Addr" +
-      "essBook\022\034\n\006people\030\001 \003(\0132\014.move.Person\"0\n" +
-      "\rPlayerFPoint3\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\022\t\n\001" +
-      "z\030\003 \001(\005\"d\n\014CSPlayerMove\022\020\n\010playerId\030\001 \001(" +
-      "\003\022 \n\003pos\030\002 \001(\0132\023.move.PlayerFPoint3\022 \n\003d" +
-      "ir\030\003 \001(\0132\023.move.PlayerFPoint3\"d\n\014SCPlaye" +
-      "rMove\022\020\n\010playerId\030\001 \001(\003\022 \n\003pos\030\002 \001(\0132\023.m" +
-      "ove.PlayerFPoint3\022 \n\003dir\030\003 \001(\0132\023.move.Pl" +
-      "ayerFPoint3\"\031\n\005CSUDP\022\020\n\010playerId\030\001 \001(\003\"\031" +
-      "\n\005SCUDP\022\020\n\010playerId\030\001 \003(\003B%\n\027first.com.p" +
-      "rotocol.moveB\nPersonMove"
+      "essBook\022\034\n\006people\030\001 \003(\0132\014.move.Person\"5\n" +
+      "\010MoveInfo\022\013\n\003dir\030\002 \001(\005\022\r\n\005ctime\030\003 \001(\003\022\r\n" +
+      "\005stime\030\004 \001(\003\">\n\014CSPlayerMove\022\020\n\010playerId" +
+      "\030\001 \001(\003\022\034\n\004move\030\002 \001(\0132\016.move.MoveInfo\">\n\014" +
+      "SCPlayerMove\022\020\n\010playerId\030\001 \001(\003\022\034\n\004move\030\002" +
+      " \001(\0132\016.move.MoveInfoB%\n\027first.com.protoc" +
+      "ol.moveB\nPersonMove"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6718,36 +5166,24 @@ public final class PersonMove {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_move_AddressBook_descriptor,
         new java.lang.String[] { "People", });
-    internal_static_move_PlayerFPoint3_descriptor =
+    internal_static_move_MoveInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_move_PlayerFPoint3_fieldAccessorTable = new
+    internal_static_move_MoveInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_move_PlayerFPoint3_descriptor,
-        new java.lang.String[] { "X", "Y", "Z", });
+        internal_static_move_MoveInfo_descriptor,
+        new java.lang.String[] { "Dir", "Ctime", "Stime", });
     internal_static_move_CSPlayerMove_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_move_CSPlayerMove_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_move_CSPlayerMove_descriptor,
-        new java.lang.String[] { "PlayerId", "Pos", "Dir", });
+        new java.lang.String[] { "PlayerId", "Move", });
     internal_static_move_SCPlayerMove_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_move_SCPlayerMove_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_move_SCPlayerMove_descriptor,
-        new java.lang.String[] { "PlayerId", "Pos", "Dir", });
-    internal_static_move_CSUDP_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_move_CSUDP_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_move_CSUDP_descriptor,
-        new java.lang.String[] { "PlayerId", });
-    internal_static_move_SCUDP_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_move_SCUDP_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_move_SCUDP_descriptor,
-        new java.lang.String[] { "PlayerId", });
+        new java.lang.String[] { "PlayerId", "Move", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

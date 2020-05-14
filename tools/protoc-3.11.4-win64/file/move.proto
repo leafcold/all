@@ -29,28 +29,20 @@ message AddressBook {
 }
 
 
-message PlayerFPoint3{
-  optional int32 x = 1;
-  optional int32 y = 2;
-  optional int32 z = 3;
+
+message MoveInfo{ //移動实体
+  optional int32 dir = 2;
+  optional int64 ctime = 3;
+  optional int64 stime = 4;
 }
 
 message CSPlayerMove{ //3-移動
   optional int64 playerId = 1;
-  optional PlayerFPoint3 pos = 2;
-  optional PlayerFPoint3 dir = 3;
+  optional MoveInfo move = 2;
 }
 
 message SCPlayerMove{ //4-移動返回
-    optional int64 playerId = 1;
-    optional PlayerFPoint3 pos = 2;
-    optional PlayerFPoint3 dir = 3;
-}
-
-message CSUDP{ //4-连接udp
   optional int64 playerId = 1;
+  optional MoveInfo move = 2;
 }
 
-message SCUDP{ //5-连接udp成功
-  repeated int64 playerId = 1;
-}

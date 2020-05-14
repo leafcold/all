@@ -1,6 +1,7 @@
 package first.core.net.udp;
 
 import first.bean.Protocal;
+import first.com.model.Player;
 import first.com.protocol.move.PersonMove;
 import first.core.invoke.Code;
 import io.netty.buffer.ByteBuf;
@@ -57,7 +58,7 @@ public class UDPDecoder extends MessageToMessageDecoder<DatagramPacket> {
         byteBuf.readBytes(body);
         Protocal protocal = new Protocal(codeLength, dataLength,pid, body);
         if(protocal.getCode() == Code.CSUDP){
-            UDPSenderCache.put(pid,datagramPacket.sender());
+            UDPSenderCache.put(pid,new Player(pid,datagramPacket.sender()));
         }
         out.add(protocal);
     }

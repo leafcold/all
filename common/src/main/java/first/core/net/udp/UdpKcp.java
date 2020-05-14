@@ -3,12 +3,14 @@ package first.core.net.udp;/*
  *创建时间:2020/3/16 20:19
  */
 
+import first.com.Global;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioDatagramChannel;
 
 public class UdpKcp {
+
 
     public static void initUdpNetty() {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -28,7 +30,9 @@ public class UdpKcp {
                             pipeline.addLast(new UDPEncoder());
                         }
                     });
-            b.bind(12310).sync().channel().closeFuture().await();
+            Channel channel = b.bind(12310).sync().channel();
+            Global.serverChannel = (NioDatagramChannel) channel;//启动游戏就存一个
+            channel.closeFuture().await();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

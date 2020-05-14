@@ -13,6 +13,7 @@ import first.core.log.Logger;
 import java.util.List;
 import java.util.Queue;
 
+import static first.core.invoke.Code.SCPlayerMove;
 import static first.core.invoke.Code.SCUDP;
 
 
@@ -57,7 +58,7 @@ public class FiberRoom extends Fiber<Void> implements Room {
                 long sTime = System.currentTimeMillis(); //服务器的时间
                 sc.getMove().toBuilder().setStime(sTime);
                 byte[] bytes = sc.build().toByteArray();
-                Protocal protocal = new Protocal(SCUDP, bytes.length, 0, bytes);
+                Protocal protocal = new Protocal(SCPlayerMove, bytes.length, 0, bytes);
                 for (Player player : this.players) {
                     protocal.setPid(player.getPlayerId());
                     Global.serverChannel.writeAndFlush(protocal);

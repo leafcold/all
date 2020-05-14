@@ -1348,7 +1348,7 @@ public final class PersonLogin {
   }
   /**
    * <pre>
-   *4-连接udp
+   *5-连接udp
    * </pre>
    *
    * Protobuf type {@code login.CSUDP}
@@ -1614,7 +1614,7 @@ public final class PersonLogin {
     }
     /**
      * <pre>
-     *4-连接udp
+     *5-连接udp
      * </pre>
      *
      * Protobuf type {@code login.CSUDP}
@@ -1882,7 +1882,7 @@ public final class PersonLogin {
   }
   /**
    * <pre>
-   *5-连接udp成功
+   *6-连接udp成功
    * </pre>
    *
    * Protobuf type {@code login.SCUDP}
@@ -2177,7 +2177,7 @@ public final class PersonLogin {
     }
     /**
      * <pre>
-     *5-连接udp成功
+     *6-连接udp成功
      * </pre>
      *
      * Protobuf type {@code login.SCUDP}

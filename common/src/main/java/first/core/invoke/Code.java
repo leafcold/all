@@ -9,7 +9,7 @@ public class Code {
     public final static  short SCPlayerLogin =  2;//登录返回
     public final static  short CSPlayerMove =  3;//移動
     public final static  short SCPlayerMove =  4;//移動返回
-    public final static  short CSUDP =  4;//连接udp
-    public final static  short SCUDP =  5;//连接udp成功
+    public final static  short CSUDP =  5;//连接udp
+    public final static  short SCUDP =  6;//连接udp成功
 
 }

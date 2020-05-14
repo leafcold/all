@@ -2911,37 +2911,109 @@ public final class PersonMove {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 dir = 2;</code>
+     * <pre>
+     *前后
+     * </pre>
+     *
+     * <code>optional bool dir = 1;</code>
      * @return Whether the dir field is set.
      */
     boolean hasDir();
     /**
-     * <code>optional int32 dir = 2;</code>
+     * <pre>
+     *前后
+     * </pre>
+     *
+     * <code>optional bool dir = 1;</code>
      * @return The dir.
      */
-    int getDir();
+    boolean getDir();
 
     /**
+     * <pre>
+     *旋转
+     * </pre>
+     *
+     * <code>optional bool spinning = 2;</code>
+     * @return Whether the spinning field is set.
+     */
+    boolean hasSpinning();
+    /**
+     * <pre>
+     *旋转
+     * </pre>
+     *
+     * <code>optional bool spinning = 2;</code>
+     * @return The spinning.
+     */
+    boolean getSpinning();
+
+    /**
+     * <pre>
+     *客户端时间
+     * </pre>
+     *
      * <code>optional int64 ctime = 3;</code>
      * @return Whether the ctime field is set.
      */
     boolean hasCtime();
     /**
+     * <pre>
+     *客户端时间
+     * </pre>
+     *
      * <code>optional int64 ctime = 3;</code>
      * @return The ctime.
      */
     long getCtime();
 
     /**
+     * <pre>
+     *服务器时间
+     * </pre>
+     *
      * <code>optional int64 stime = 4;</code>
      * @return Whether the stime field is set.
      */
     boolean hasStime();
     /**
+     * <pre>
+     *服务器时间
+     * </pre>
+     *
      * <code>optional int64 stime = 4;</code>
      * @return The stime.
      */
     long getStime();
+
+    /**
+     * <pre>
+     *射击
+     * </pre>
+     *
+     * <code>optional string fire = 5;</code>
+     * @return Whether the fire field is set.
+     */
+    boolean hasFire();
+    /**
+     * <pre>
+     *射击
+     * </pre>
+     *
+     * <code>optional string fire = 5;</code>
+     * @return The fire.
+     */
+    java.lang.String getFire();
+    /**
+     * <pre>
+     *射击
+     * </pre>
+     *
+     * <code>optional string fire = 5;</code>
+     * @return The bytes for fire.
+     */
+    com.google.protobuf.ByteString
+        getFireBytes();
   }
   /**
    * <pre>
@@ -2960,6 +3032,7 @@ public final class PersonMove {
       super(builder);
     }
     private MoveInfo() {
+      fire_ = "";
     }
 
     @java.lang.Override
@@ -2993,19 +3066,30 @@ public final class PersonMove {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
               bitField0_ |= 0x00000001;
-              dir_ = input.readInt32();
+              dir_ = input.readBool();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              spinning_ = input.readBool();
               break;
             }
             case 24: {
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               ctime_ = input.readInt64();
               break;
             }
             case 32: {
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               stime_ = input.readInt64();
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              fire_ = bs;
               break;
             }
             default: {
@@ -3041,33 +3125,74 @@ public final class PersonMove {
     }
 
     private int bitField0_;
-    public static final int DIR_FIELD_NUMBER = 2;
-    private int dir_;
+    public static final int DIR_FIELD_NUMBER = 1;
+    private boolean dir_;
     /**
-     * <code>optional int32 dir = 2;</code>
+     * <pre>
+     *前后
+     * </pre>
+     *
+     * <code>optional bool dir = 1;</code>
      * @return Whether the dir field is set.
      */
     public boolean hasDir() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional int32 dir = 2;</code>
+     * <pre>
+     *前后
+     * </pre>
+     *
+     * <code>optional bool dir = 1;</code>
      * @return The dir.
      */
-    public int getDir() {
+    public boolean getDir() {
       return dir_;
+    }
+
+    public static final int SPINNING_FIELD_NUMBER = 2;
+    private boolean spinning_;
+    /**
+     * <pre>
+     *旋转
+     * </pre>
+     *
+     * <code>optional bool spinning = 2;</code>
+     * @return Whether the spinning field is set.
+     */
+    public boolean hasSpinning() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     *旋转
+     * </pre>
+     *
+     * <code>optional bool spinning = 2;</code>
+     * @return The spinning.
+     */
+    public boolean getSpinning() {
+      return spinning_;
     }
 
     public static final int CTIME_FIELD_NUMBER = 3;
     private long ctime_;
     /**
+     * <pre>
+     *客户端时间
+     * </pre>
+     *
      * <code>optional int64 ctime = 3;</code>
      * @return Whether the ctime field is set.
      */
     public boolean hasCtime() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
+     * <pre>
+     *客户端时间
+     * </pre>
+     *
      * <code>optional int64 ctime = 3;</code>
      * @return The ctime.
      */
@@ -3078,18 +3203,83 @@ public final class PersonMove {
     public static final int STIME_FIELD_NUMBER = 4;
     private long stime_;
     /**
+     * <pre>
+     *服务器时间
+     * </pre>
+     *
      * <code>optional int64 stime = 4;</code>
      * @return Whether the stime field is set.
      */
     public boolean hasStime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
+     * <pre>
+     *服务器时间
+     * </pre>
+     *
      * <code>optional int64 stime = 4;</code>
      * @return The stime.
      */
     public long getStime() {
       return stime_;
+    }
+
+    public static final int FIRE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object fire_;
+    /**
+     * <pre>
+     *射击
+     * </pre>
+     *
+     * <code>optional string fire = 5;</code>
+     * @return Whether the fire field is set.
+     */
+    public boolean hasFire() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     *射击
+     * </pre>
+     *
+     * <code>optional string fire = 5;</code>
+     * @return The fire.
+     */
+    public java.lang.String getFire() {
+      java.lang.Object ref = fire_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fire_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *射击
+     * </pre>
+     *
+     * <code>optional string fire = 5;</code>
+     * @return The bytes for fire.
+     */
+    public com.google.protobuf.ByteString
+        getFireBytes() {
+      java.lang.Object ref = fire_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fire_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3107,13 +3297,19 @@ public final class PersonMove {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(2, dir_);
+        output.writeBool(1, dir_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt64(3, ctime_);
+        output.writeBool(2, spinning_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeInt64(3, ctime_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeInt64(4, stime_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, fire_);
       }
       unknownFields.writeTo(output);
     }
@@ -3126,15 +3322,22 @@ public final class PersonMove {
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, dir_);
+          .computeBoolSize(1, dir_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, ctime_);
+          .computeBoolSize(2, spinning_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, ctime_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, stime_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, fire_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3156,6 +3359,11 @@ public final class PersonMove {
         if (getDir()
             != other.getDir()) return false;
       }
+      if (hasSpinning() != other.hasSpinning()) return false;
+      if (hasSpinning()) {
+        if (getSpinning()
+            != other.getSpinning()) return false;
+      }
       if (hasCtime() != other.hasCtime()) return false;
       if (hasCtime()) {
         if (getCtime()
@@ -3165,6 +3373,11 @@ public final class PersonMove {
       if (hasStime()) {
         if (getStime()
             != other.getStime()) return false;
+      }
+      if (hasFire() != other.hasFire()) return false;
+      if (hasFire()) {
+        if (!getFire()
+            .equals(other.getFire())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3179,7 +3392,13 @@ public final class PersonMove {
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasDir()) {
         hash = (37 * hash) + DIR_FIELD_NUMBER;
-        hash = (53 * hash) + getDir();
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getDir());
+      }
+      if (hasSpinning()) {
+        hash = (37 * hash) + SPINNING_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSpinning());
       }
       if (hasCtime()) {
         hash = (37 * hash) + CTIME_FIELD_NUMBER;
@@ -3190,6 +3409,10 @@ public final class PersonMove {
         hash = (37 * hash) + STIME_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getStime());
+      }
+      if (hasFire()) {
+        hash = (37 * hash) + FIRE_FIELD_NUMBER;
+        hash = (53 * hash) + getFire().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3328,12 +3551,16 @@ public final class PersonMove {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dir_ = 0;
+        dir_ = false;
         bitField0_ = (bitField0_ & ~0x00000001);
-        ctime_ = 0L;
+        spinning_ = false;
         bitField0_ = (bitField0_ & ~0x00000002);
-        stime_ = 0L;
+        ctime_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
+        stime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        fire_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -3367,13 +3594,21 @@ public final class PersonMove {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.ctime_ = ctime_;
+          result.spinning_ = spinning_;
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.stime_ = stime_;
+          result.ctime_ = ctime_;
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.stime_ = stime_;
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.fire_ = fire_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3426,11 +3661,19 @@ public final class PersonMove {
         if (other.hasDir()) {
           setDir(other.getDir());
         }
+        if (other.hasSpinning()) {
+          setSpinning(other.getSpinning());
+        }
         if (other.hasCtime()) {
           setCtime(other.getCtime());
         }
         if (other.hasStime()) {
           setStime(other.getStime());
+        }
+        if (other.hasFire()) {
+          bitField0_ |= 0x00000010;
+          fire_ = other.fire_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3462,52 +3705,129 @@ public final class PersonMove {
       }
       private int bitField0_;
 
-      private int dir_ ;
+      private boolean dir_ ;
       /**
-       * <code>optional int32 dir = 2;</code>
+       * <pre>
+       *前后
+       * </pre>
+       *
+       * <code>optional bool dir = 1;</code>
        * @return Whether the dir field is set.
        */
       public boolean hasDir() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>optional int32 dir = 2;</code>
+       * <pre>
+       *前后
+       * </pre>
+       *
+       * <code>optional bool dir = 1;</code>
        * @return The dir.
        */
-      public int getDir() {
+      public boolean getDir() {
         return dir_;
       }
       /**
-       * <code>optional int32 dir = 2;</code>
+       * <pre>
+       *前后
+       * </pre>
+       *
+       * <code>optional bool dir = 1;</code>
        * @param value The dir to set.
        * @return This builder for chaining.
        */
-      public Builder setDir(int value) {
+      public Builder setDir(boolean value) {
         bitField0_ |= 0x00000001;
         dir_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 dir = 2;</code>
+       * <pre>
+       *前后
+       * </pre>
+       *
+       * <code>optional bool dir = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearDir() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        dir_ = 0;
+        dir_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean spinning_ ;
+      /**
+       * <pre>
+       *旋转
+       * </pre>
+       *
+       * <code>optional bool spinning = 2;</code>
+       * @return Whether the spinning field is set.
+       */
+      public boolean hasSpinning() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <pre>
+       *旋转
+       * </pre>
+       *
+       * <code>optional bool spinning = 2;</code>
+       * @return The spinning.
+       */
+      public boolean getSpinning() {
+        return spinning_;
+      }
+      /**
+       * <pre>
+       *旋转
+       * </pre>
+       *
+       * <code>optional bool spinning = 2;</code>
+       * @param value The spinning to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpinning(boolean value) {
+        bitField0_ |= 0x00000002;
+        spinning_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *旋转
+       * </pre>
+       *
+       * <code>optional bool spinning = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpinning() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        spinning_ = false;
         onChanged();
         return this;
       }
 
       private long ctime_ ;
       /**
+       * <pre>
+       *客户端时间
+       * </pre>
+       *
        * <code>optional int64 ctime = 3;</code>
        * @return Whether the ctime field is set.
        */
       public boolean hasCtime() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
+       * <pre>
+       *客户端时间
+       * </pre>
+       *
        * <code>optional int64 ctime = 3;</code>
        * @return The ctime.
        */
@@ -3515,22 +3835,30 @@ public final class PersonMove {
         return ctime_;
       }
       /**
+       * <pre>
+       *客户端时间
+       * </pre>
+       *
        * <code>optional int64 ctime = 3;</code>
        * @param value The ctime to set.
        * @return This builder for chaining.
        */
       public Builder setCtime(long value) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         ctime_ = value;
         onChanged();
         return this;
       }
       /**
+       * <pre>
+       *客户端时间
+       * </pre>
+       *
        * <code>optional int64 ctime = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCtime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         ctime_ = 0L;
         onChanged();
         return this;
@@ -3538,13 +3866,21 @@ public final class PersonMove {
 
       private long stime_ ;
       /**
+       * <pre>
+       *服务器时间
+       * </pre>
+       *
        * <code>optional int64 stime = 4;</code>
        * @return Whether the stime field is set.
        */
       public boolean hasStime() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
+       * <pre>
+       *服务器时间
+       * </pre>
+       *
        * <code>optional int64 stime = 4;</code>
        * @return The stime.
        */
@@ -3552,23 +3888,139 @@ public final class PersonMove {
         return stime_;
       }
       /**
+       * <pre>
+       *服务器时间
+       * </pre>
+       *
        * <code>optional int64 stime = 4;</code>
        * @param value The stime to set.
        * @return This builder for chaining.
        */
       public Builder setStime(long value) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         stime_ = value;
         onChanged();
         return this;
       }
       /**
+       * <pre>
+       *服务器时间
+       * </pre>
+       *
        * <code>optional int64 stime = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearStime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         stime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fire_ = "";
+      /**
+       * <pre>
+       *射击
+       * </pre>
+       *
+       * <code>optional string fire = 5;</code>
+       * @return Whether the fire field is set.
+       */
+      public boolean hasFire() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <pre>
+       *射击
+       * </pre>
+       *
+       * <code>optional string fire = 5;</code>
+       * @return The fire.
+       */
+      public java.lang.String getFire() {
+        java.lang.Object ref = fire_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            fire_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *射击
+       * </pre>
+       *
+       * <code>optional string fire = 5;</code>
+       * @return The bytes for fire.
+       */
+      public com.google.protobuf.ByteString
+          getFireBytes() {
+        java.lang.Object ref = fire_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fire_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *射击
+       * </pre>
+       *
+       * <code>optional string fire = 5;</code>
+       * @param value The fire to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFire(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        fire_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *射击
+       * </pre>
+       *
+       * <code>optional string fire = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFire() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        fire_ = getDefaultInstance().getFire();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *射击
+       * </pre>
+       *
+       * <code>optional string fire = 5;</code>
+       * @param value The bytes for fire to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFireBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        fire_ = value;
         onChanged();
         return this;
       }
@@ -5136,13 +5588,14 @@ public final class PersonMove {
       "eNumber\022\016\n\006number\030\001 \002(\t\022*\n\004type\030\002 \001(\0162\026." +
       "move.Person.PhoneType:\004HOME\"+\n\tPhoneType" +
       "\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001\022\010\n\004WORK\020\002\"+\n\013Addr" +
-      "essBook\022\034\n\006people\030\001 \003(\0132\014.move.Person\"5\n" +
-      "\010MoveInfo\022\013\n\003dir\030\002 \001(\005\022\r\n\005ctime\030\003 \001(\003\022\r\n" +
-      "\005stime\030\004 \001(\003\">\n\014CSPlayerMove\022\020\n\010playerId" +
-      "\030\001 \001(\003\022\034\n\004move\030\002 \001(\0132\016.move.MoveInfo\">\n\014" +
-      "SCPlayerMove\022\020\n\010playerId\030\001 \001(\003\022\034\n\004move\030\002" +
-      " \001(\0132\016.move.MoveInfoB%\n\027first.com.protoc" +
-      "ol.moveB\nPersonMove"
+      "essBook\022\034\n\006people\030\001 \003(\0132\014.move.Person\"U\n" +
+      "\010MoveInfo\022\013\n\003dir\030\001 \001(\010\022\020\n\010spinning\030\002 \001(\010" +
+      "\022\r\n\005ctime\030\003 \001(\003\022\r\n\005stime\030\004 \001(\003\022\014\n\004fire\030\005" +
+      " \001(\t\">\n\014CSPlayerMove\022\020\n\010playerId\030\001 \001(\003\022\034" +
+      "\n\004move\030\002 \001(\0132\016.move.MoveInfo\">\n\014SCPlayer" +
+      "Move\022\020\n\010playerId\030\001 \001(\003\022\034\n\004move\030\002 \001(\0132\016.m" +
+      "ove.MoveInfoB%\n\027first.com.protocol.moveB" +
+      "\nPersonMove"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5171,7 +5624,7 @@ public final class PersonMove {
     internal_static_move_MoveInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_move_MoveInfo_descriptor,
-        new java.lang.String[] { "Dir", "Ctime", "Stime", });
+        new java.lang.String[] { "Dir", "Spinning", "Ctime", "Stime", "Fire", });
     internal_static_move_CSPlayerMove_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_move_CSPlayerMove_fieldAccessorTable = new

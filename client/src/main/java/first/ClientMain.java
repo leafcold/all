@@ -32,6 +32,8 @@ import java.util.Map;
 import static first.core.invoke.Code.*;
 
 public class ClientMain {
+
+    public static long playerId = System.currentTimeMillis();
     /// tcp
 //    public static void main(String[] args) throws Exception {
 //        String host = "172.16.2.24";
@@ -87,8 +89,8 @@ public class ClientMain {
 
             Channel ch = b.bind(0).sync().channel();
 
-            PersonMove.CSUDP.Builder sc = PersonMove.CSUDP.newBuilder();
-            sc.setPlayerId(System.currentTimeMillis());
+            PersonLogin.CSUDP.Builder sc = PersonLogin.CSUDP.newBuilder();
+            sc.setPlayerId(playerId);
             byte[] bytes = sc.build().toByteArray();
             Protocal protocal = new Protocal(CSUDP, bytes.length,sc.getPlayerId(),bytes);
             ByteBuf msg = protocal.toArray();

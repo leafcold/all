@@ -8,7 +8,6 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.handler.codec.MessageToMessageDecoder;
-import javafx.util.Pair;
 
 import java.lang.reflect.Method;
 import java.net.InetSocketAddress;

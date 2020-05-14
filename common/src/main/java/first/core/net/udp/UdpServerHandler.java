@@ -3,6 +3,7 @@ package first.core.net.udp;/*
  *创建时间:2020/4/30 20:15
  */
 
+import co.paralleluniverse.common.util.Pair;
 import first.bean.Protocal;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -10,7 +11,6 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.util.ReferenceCountUtil;
-import javafx.util.Pair;
 
 import java.lang.reflect.Method;
 import java.nio.charset.Charset;
@@ -29,7 +29,7 @@ public class UdpServerHandler extends SimpleChannelInboundHandler<Protocal> {
             Protocal in = (Protocal) msg;
             Pair<Object, Method> objectPair = ContextMap.get(in.getCode());
             Object invokeObject = protoMap.get(((Protocal) msg).getCode()).invoke(null, new Object[]{in.getProbuffer()});
-            objectPair.getValue().invoke(objectPair.getKey(), invokeObject, ctx);
+            objectPair.getSecond().invoke(objectPair.getFirst(), invokeObject, ctx);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("当前解析失败");

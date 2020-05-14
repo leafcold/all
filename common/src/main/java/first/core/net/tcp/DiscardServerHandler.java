@@ -3,6 +3,7 @@ package first.core.net.tcp;/*
  *创建时间:2020/3/17 10:14
  */
 
+import co.paralleluniverse.common.util.Pair;
 import first.bean.Protocal;
 import first.com.protocol.move.PersonMove;
 import io.netty.buffer.ByteBuf;
@@ -11,7 +12,6 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
-import javafx.util.Pair;
 
 import java.lang.reflect.Method;
 
@@ -32,7 +32,7 @@ public class DiscardServerHandler  extends ChannelInboundHandlerAdapter {
             Protocal in = (Protocal) msg;
             Pair<Object, Method> objectPair=ContextMap.get(in.getCode());
             Object invokeObject=protoMap.get(((Protocal) msg).getCode()).invoke(null,new Object[]{in.getProbuffer()});
-            objectPair.getValue().invoke(objectPair.getKey(),invokeObject,ctx);
+            objectPair.getSecond().invoke(objectPair.getFirst(),invokeObject,ctx);
         } catch (Exception e){
             e.printStackTrace();
             System.out.println("当前解析失败");

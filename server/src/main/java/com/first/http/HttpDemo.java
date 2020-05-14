@@ -3,10 +3,10 @@ package com.first.http;/*
  *创建时间:2020/4/16 23:34
  */
 
+import co.paralleluniverse.common.util.Pair;
 import first.com.http.FirstHttp;
 import first.com.http.PassWord;
 import first.core.context.HttpContext;
-import javafx.util.Pair;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
@@ -118,7 +118,7 @@ public class HttpDemo {
             is.close();
             return dateValue;
         }
-        if(!map.get(passWord.getUser()).getValue().equals(passWord.getOldPassword()))
+        if(!map.get(passWord.getUser()).getSecond().equals(passWord.getOldPassword()))
         {
             dateValue=dateValue.replace("${1}","密码不对");
             br.close();
@@ -129,7 +129,7 @@ public class HttpDemo {
         //开始修改密码 已经存在 重新再读一次
         String oldString=passWord.getUser()+" = "+passWord.getOldPassword();
         String newString=passWord.getUser()+" = "+passWord.getNowPassword();
-        if(!replaceTxtByLineNo(path,map.get(passWord.getUser()).getKey(),newString,oldString)){
+        if(!replaceTxtByLineNo(path,map.get(passWord.getUser()).getFirst(),newString,oldString)){
             dateValue=dateValue.replace("${1}","解析错误");
             br.close();
             isr.close();

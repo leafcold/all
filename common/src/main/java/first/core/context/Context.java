@@ -3,9 +3,10 @@ package first.core.context;/*
  *创建时间:2020/3/21 21:23
  */
 
+import co.paralleluniverse.common.util.Pair;
 import first.core.net.http.ParseUrlUtil;
 import io.netty.channel.MultithreadEventLoopGroup;
-import javafx.util.Pair;
+
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -58,8 +59,8 @@ public class Context {
         for (Pair<String, String> className : stringList) {
             //去获取
             try {
-                Object contextBean = context.getBean(toLowerCaseFirstOne(className.getValue()));
-                Method[] classMethods = Class.forName(className.getKey()).getDeclaredMethods();
+                Object contextBean = context.getBean(toLowerCaseFirstOne(className.getSecond()));
+                Method[] classMethods = Class.forName(className.getFirst()).getDeclaredMethods();
                 for (Method classMethod : classMethods) {
                     if(classMethod.getAnnotation(FunctionDoName.class)!=null)
                     {

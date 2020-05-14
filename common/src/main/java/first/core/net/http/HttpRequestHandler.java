@@ -3,13 +3,13 @@ package first.core.net.http;/*
  *创建时间:2020/4/16 17:13
  */
 
+import co.paralleluniverse.common.util.Pair;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.*;
 import io.netty.util.CharsetUtil;
-import javafx.util.Pair;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -49,7 +49,7 @@ public class HttpRequestHandler extends SimpleChannelInboundHandler<FullHttpRequ
         parseUrlUtil.parser(url);
         Pair<Object, Method> objectPair=HttpContextMap.get(parseUrlUtil.getStrUrl());
         Object invokeObject=HttpMap.get(parseUrlUtil.getStrUrl()).invoke(null,parseUrlUtil);
-        String msg=(String) objectPair.getValue().invoke(objectPair.getKey(),invokeObject);
+        String msg=(String) objectPair.getSecond().invoke(objectPair.getFirst(),invokeObject);
 
 
 

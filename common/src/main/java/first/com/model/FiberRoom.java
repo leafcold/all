@@ -20,7 +20,7 @@ import static first.core.invoke.Code.SCUDP;
 
 /**
  * 一个房间 是一个 Fiber，即 协程 ，坑很多 ，需要踩
- *
+ * <p>
  * 在 VM options 中加入参数 -javaagent:D://quasar-core-0.8.0.jar
  */
 public class FiberRoom extends Fiber<Void> implements Room {
@@ -28,6 +28,7 @@ public class FiberRoom extends Fiber<Void> implements Room {
     private String roomId;
     private SwapableQueuePair<PersonMove.CSPlayerMove> moves;
     private final PersonMove.SCPlayerMove.Builder sc = PersonMove.SCPlayerMove.newBuilder();
+    private boolean gameOver = false; //刚开始
 
 
     /**
@@ -46,7 +47,7 @@ public class FiberRoom extends Fiber<Void> implements Room {
     @Override
     public Void run() throws SuspendExecution, InterruptedException {
         Logger.MLOG.info("#######room:[" + roomId + "]tick start########");
-        do {
+        while (!gameOver) {
             moves.swap();
             Queue<PersonMove.CSPlayerMove> dealQueue = moves.first();
             while (!dealQueue.isEmpty()) {
@@ -60,15 +61,18 @@ public class FiberRoom extends Fiber<Void> implements Room {
                 sc.getMove().toBuilder().setStime(sTime);
                 byte[] bytes = sc.build().toByteArray();
                 Protocal protocal = new Protocal(SCPlayerMove, bytes.length, 0, bytes);
+
                 for (Player player : this.players) {
                     protocal.setPid(player.getPlayerId());
                     Global.serverChannel.writeAndFlush(protocal);
                 }
+//                gameOver = true;
                 Logger.MLOG.info("msg" + msg + "发送成功");
             }
-
             Strand.sleep(40);
-        } while (true);
+
+        }
+        return null;
     }
 
 
@@ -79,8 +83,6 @@ public class FiberRoom extends Fiber<Void> implements Room {
             sc.addPlayerId(player.getPlayerId());
         }
         byte[] bytes = sc.build().toByteArray();
-        System.out.println("uuuuuuuu"+Arrays.toString(bytes));
-
         for (Player player : players) {
             Protocal protocal = new Protocal(SCUDP, bytes.length, player.getPlayerId(), bytes);
             Global.serverChannel.writeAndFlush(protocal);
@@ -95,18 +97,24 @@ public class FiberRoom extends Fiber<Void> implements Room {
 
     @Override
     public void close() {
-
+        for (Player player : players) {
+            player.setRoom(null);//让玩家不在房间
+        }
+        this.players.clear();//清空房间的人
+        this.cancel(true);
     }
 
     @Override
     public void addPlayer(Player player) {
         player.addRoom(this); //互相持有引用
         this.players.add(player);
-
     }
 
     @Override
     public void addMoveMsg(PersonMove.CSPlayerMove move) {
+        if (gameOver) {
+            return;//如果游戏结束，不再广播消息
+        }
         moves.second().add(move);
     }
 

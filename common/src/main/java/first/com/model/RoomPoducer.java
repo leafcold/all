@@ -15,11 +15,10 @@ public class RoomPoducer extends Thread {
     // 缓存玩家
     private final BlockingQueue<Player> playersBlockingQueue;
 
-
     private final List<Player> playerList;//满2个人开一个房间
 
     public RoomPoducer() {
-        playersBlockingQueue=new ArrayBlockingQueue<>(100);
+        playersBlockingQueue = new ArrayBlockingQueue<>(100);
         playerList = new ArrayList<>();
 
     }
@@ -35,7 +34,7 @@ public class RoomPoducer extends Thread {
         }
     }
 
-    public void readygo(){
+    public void readygo() {
         //初始化一个房间
         Room room = new FiberRoom(Global.fiberScheduler, new ArrayList<>(), UUID.randomUUID().toString());
         for (Player player : playerList) {
@@ -46,18 +45,13 @@ public class RoomPoducer extends Thread {
     }
 
 
-
-
-
-
-
     @Override
     public void run() {
-        while(true){
+        while (true) {
             try {
                 Player take = playersBlockingQueue.take();
                 playerList.add(take);
-                if(playerList.size()==2){
+                if (playerList.size() == 2) {
                     readygo();//准备好了房间
                     playerList.clear();//清空
                 }

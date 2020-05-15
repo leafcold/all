@@ -31,6 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static first.core.invoke.Code.*;
+import static java.lang.Thread.*;
 
 public class ClientMain {
 
@@ -75,6 +76,27 @@ public class ClientMain {
 
     // udp
     public static void main(String[] args) {
+        int clientNum = 1000;
+        for (int i = 0; i < clientNum; i++) {
+            try {
+                sleep(10L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    playerId = System.currentTimeMillis();
+                    mainOpenThread(args);
+                    System.out.println("open one");
+                }
+            }).start();
+        }
+
+
+    }
+
+    public static void mainOpenThread(String[] args) {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             Bootstrap b = new Bootstrap();
@@ -85,8 +107,8 @@ public class ClientMain {
                         protected void initChannel(Channel channel) throws Exception {
                             ChannelPipeline pipeline = channel.pipeline();
 
-                            pipeline.addLast("ClientDecoder",new ClientDecoder());
-                            pipeline.addLast("CLientHandler",new CLientHandler());
+                            pipeline.addLast("ClientDecoder", new ClientDecoder());
+                            pipeline.addLast("CLientHandler", new CLientHandler());
                         }
                     });
 
@@ -95,10 +117,10 @@ public class ClientMain {
             PersonLogin.CSUDP.Builder sc = PersonLogin.CSUDP.newBuilder();
             sc.setPlayerId(playerId);
             byte[] bytes = sc.build().toByteArray();
-            Protocal protocal = new Protocal(CSUDP, bytes.length,sc.getPlayerId(),bytes);
+            Protocal protocal = new Protocal(CSUDP, bytes.length, sc.getPlayerId(), bytes);
             ByteBuf msg = protocal.toArray();
             ch.writeAndFlush(new DatagramPacket(msg, new InetSocketAddress("127.0.0.1", 12310))).sync();
-            ch.closeFuture().await();
+//            ch.closeFuture().await();
 
         } catch (Exception e) {
             e.printStackTrace();

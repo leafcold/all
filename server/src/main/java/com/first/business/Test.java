@@ -88,16 +88,7 @@ public class Test {
     @FunctionDoName(CSUDP)
     public void csUdp(PersonLogin.CSUDP csudp, ChannelHandlerContext cx) {
         Logger.MLOG.info("connect");
-        if (UDPSenderCache.size() >= 2) { //TODO 先这么写 没有想好 怎么分配房间
-            //初始化一个房间
-            Room room = new FiberRoom(Global.fiberScheduler, new ArrayList<>(), UUID.randomUUID().toString());
-            Map<Long, Player> data = UDPSenderCache.getData();
-            for (Map.Entry<Long, Player> longPlayerEntry : data.entrySet()) {
-                room.addPlayer(longPlayerEntry.getValue());
-            }
-            room.notice();//通知
-            room.open();//开启tick
-        }
+        Global.roomPoducer.addPlayer(UDPSenderCache.get(csudp.getPlayerId()));
         Logger.MLOG.info("end connect");
     }
 }

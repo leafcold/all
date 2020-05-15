@@ -7,6 +7,7 @@ import first.bean.Protocal;
 import first.com.protocol.Login.PersonLogin;
 import first.com.protocol.move.PersonMove;
 import first.core.CLientHandler;
+import first.core.ClientDecoder;
 import first.core.TimeClientHandler;
 import first.core.invoke.Code;
 import first.core.net.tcp.DecoderHandler;
@@ -83,7 +84,9 @@ public class ClientMain {
                         @Override
                         protected void initChannel(Channel channel) throws Exception {
                             ChannelPipeline pipeline = channel.pipeline();
-                            pipeline.addLast("cLientHandler",new CLientHandler());
+
+                            pipeline.addLast("ClientDecoder",new ClientDecoder());
+                            pipeline.addLast("CLientHandler",new CLientHandler());
                         }
                     });
 

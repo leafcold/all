@@ -18,13 +18,13 @@ import java.net.InetSocketAddress;
 import static first.core.invoke.Code.CSPlayerMove;
 import static first.core.invoke.Code.CSUDP;
 
-public  class CLientHandler extends SimpleChannelInboundHandler<DatagramPacket> {
+public  class CLientHandler extends SimpleChannelInboundHandler<Protocal> {
 
-    public static int count = 0;
+    public static int count = 100;
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, DatagramPacket datagramPacket) throws Exception {
-        System.out.println(datagramPacket); //收到消息
+    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Protocal protocal) throws Exception {
+        System.out.println(protocal); //收到消息
         count++;
         if(count == 1){
             Channel channel = channelHandlerContext.channel();

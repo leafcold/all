@@ -1,6 +1,7 @@
 package com;
 
 import com.first.business.Test;
+import first.com.Global;
 import first.core.log.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,6 +37,7 @@ public class Main {
         new Thread(Main::tcpNetty,"tcpNetty").start();
         new Thread(Main::httpNetty,"initHttpNetty").start();
         new Thread(Main::UDPNetty,"UDPNetty").start();
+        Global.roomPoducer.start();//生产房间
         Logger.MLOG.info("111");
         Runtime.getRuntime().addShutdownHook(new Thread(){
             @Override

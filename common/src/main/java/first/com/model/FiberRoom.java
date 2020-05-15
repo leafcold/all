@@ -10,6 +10,7 @@ import first.com.protocol.Login.PersonLogin;
 import first.com.protocol.move.PersonMove;
 import first.core.log.Logger;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Queue;
 
@@ -26,7 +27,7 @@ public class FiberRoom extends Fiber<Void> implements Room {
     private List<Player> players;//房间内的人
     private String roomId;
     private SwapableQueuePair<PersonMove.CSPlayerMove> moves;
-    private PersonMove.SCPlayerMove.Builder sc = PersonMove.SCPlayerMove.newBuilder();
+    private final PersonMove.SCPlayerMove.Builder sc = PersonMove.SCPlayerMove.newBuilder();
 
 
     /**
@@ -78,6 +79,7 @@ public class FiberRoom extends Fiber<Void> implements Room {
             sc.addPlayerId(player.getPlayerId());
         }
         byte[] bytes = sc.build().toByteArray();
+        System.out.println("uuuuuuuu"+Arrays.toString(bytes));
 
         for (Player player : players) {
             Protocal protocal = new Protocal(SCUDP, bytes.length, player.getPlayerId(), bytes);

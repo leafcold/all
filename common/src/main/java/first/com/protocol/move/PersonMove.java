@@ -2915,7 +2915,7 @@ public final class PersonMove {
      *前后
      * </pre>
      *
-     * <code>optional bool dir = 1;</code>
+     * <code>optional int32 dir = 1;</code>
      * @return Whether the dir field is set.
      */
     boolean hasDir();
@@ -2924,17 +2924,17 @@ public final class PersonMove {
      *前后
      * </pre>
      *
-     * <code>optional bool dir = 1;</code>
+     * <code>optional int32 dir = 1;</code>
      * @return The dir.
      */
-    boolean getDir();
+    int getDir();
 
     /**
      * <pre>
      *旋转
      * </pre>
      *
-     * <code>optional bool spinning = 2;</code>
+     * <code>optional int32 spinning = 2;</code>
      * @return Whether the spinning field is set.
      */
     boolean hasSpinning();
@@ -2943,10 +2943,10 @@ public final class PersonMove {
      *旋转
      * </pre>
      *
-     * <code>optional bool spinning = 2;</code>
+     * <code>optional int32 spinning = 2;</code>
      * @return The spinning.
      */
-    boolean getSpinning();
+    int getSpinning();
 
     /**
      * <pre>
@@ -3068,12 +3068,12 @@ public final class PersonMove {
               break;
             case 8: {
               bitField0_ |= 0x00000001;
-              dir_ = input.readBool();
+              dir_ = input.readInt32();
               break;
             }
             case 16: {
               bitField0_ |= 0x00000002;
-              spinning_ = input.readBool();
+              spinning_ = input.readInt32();
               break;
             }
             case 24: {
@@ -3126,13 +3126,13 @@ public final class PersonMove {
 
     private int bitField0_;
     public static final int DIR_FIELD_NUMBER = 1;
-    private boolean dir_;
+    private int dir_;
     /**
      * <pre>
      *前后
      * </pre>
      *
-     * <code>optional bool dir = 1;</code>
+     * <code>optional int32 dir = 1;</code>
      * @return Whether the dir field is set.
      */
     public boolean hasDir() {
@@ -3143,21 +3143,21 @@ public final class PersonMove {
      *前后
      * </pre>
      *
-     * <code>optional bool dir = 1;</code>
+     * <code>optional int32 dir = 1;</code>
      * @return The dir.
      */
-    public boolean getDir() {
+    public int getDir() {
       return dir_;
     }
 
     public static final int SPINNING_FIELD_NUMBER = 2;
-    private boolean spinning_;
+    private int spinning_;
     /**
      * <pre>
      *旋转
      * </pre>
      *
-     * <code>optional bool spinning = 2;</code>
+     * <code>optional int32 spinning = 2;</code>
      * @return Whether the spinning field is set.
      */
     public boolean hasSpinning() {
@@ -3168,10 +3168,10 @@ public final class PersonMove {
      *旋转
      * </pre>
      *
-     * <code>optional bool spinning = 2;</code>
+     * <code>optional int32 spinning = 2;</code>
      * @return The spinning.
      */
-    public boolean getSpinning() {
+    public int getSpinning() {
       return spinning_;
     }
 
@@ -3297,10 +3297,10 @@ public final class PersonMove {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeBool(1, dir_);
+        output.writeInt32(1, dir_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeBool(2, spinning_);
+        output.writeInt32(2, spinning_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeInt64(3, ctime_);
@@ -3322,11 +3322,11 @@ public final class PersonMove {
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, dir_);
+          .computeInt32Size(1, dir_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, spinning_);
+          .computeInt32Size(2, spinning_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3392,13 +3392,11 @@ public final class PersonMove {
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasDir()) {
         hash = (37 * hash) + DIR_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getDir());
+        hash = (53 * hash) + getDir();
       }
       if (hasSpinning()) {
         hash = (37 * hash) + SPINNING_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getSpinning());
+        hash = (53 * hash) + getSpinning();
       }
       if (hasCtime()) {
         hash = (37 * hash) + CTIME_FIELD_NUMBER;
@@ -3551,9 +3549,9 @@ public final class PersonMove {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dir_ = false;
+        dir_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        spinning_ = false;
+        spinning_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
         ctime_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3705,13 +3703,13 @@ public final class PersonMove {
       }
       private int bitField0_;
 
-      private boolean dir_ ;
+      private int dir_ ;
       /**
        * <pre>
        *前后
        * </pre>
        *
-       * <code>optional bool dir = 1;</code>
+       * <code>optional int32 dir = 1;</code>
        * @return Whether the dir field is set.
        */
       public boolean hasDir() {
@@ -3722,10 +3720,10 @@ public final class PersonMove {
        *前后
        * </pre>
        *
-       * <code>optional bool dir = 1;</code>
+       * <code>optional int32 dir = 1;</code>
        * @return The dir.
        */
-      public boolean getDir() {
+      public int getDir() {
         return dir_;
       }
       /**
@@ -3733,11 +3731,11 @@ public final class PersonMove {
        *前后
        * </pre>
        *
-       * <code>optional bool dir = 1;</code>
+       * <code>optional int32 dir = 1;</code>
        * @param value The dir to set.
        * @return This builder for chaining.
        */
-      public Builder setDir(boolean value) {
+      public Builder setDir(int value) {
         bitField0_ |= 0x00000001;
         dir_ = value;
         onChanged();
@@ -3748,23 +3746,23 @@ public final class PersonMove {
        *前后
        * </pre>
        *
-       * <code>optional bool dir = 1;</code>
+       * <code>optional int32 dir = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearDir() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        dir_ = false;
+        dir_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean spinning_ ;
+      private int spinning_ ;
       /**
        * <pre>
        *旋转
        * </pre>
        *
-       * <code>optional bool spinning = 2;</code>
+       * <code>optional int32 spinning = 2;</code>
        * @return Whether the spinning field is set.
        */
       public boolean hasSpinning() {
@@ -3775,10 +3773,10 @@ public final class PersonMove {
        *旋转
        * </pre>
        *
-       * <code>optional bool spinning = 2;</code>
+       * <code>optional int32 spinning = 2;</code>
        * @return The spinning.
        */
-      public boolean getSpinning() {
+      public int getSpinning() {
         return spinning_;
       }
       /**
@@ -3786,11 +3784,11 @@ public final class PersonMove {
        *旋转
        * </pre>
        *
-       * <code>optional bool spinning = 2;</code>
+       * <code>optional int32 spinning = 2;</code>
        * @param value The spinning to set.
        * @return This builder for chaining.
        */
-      public Builder setSpinning(boolean value) {
+      public Builder setSpinning(int value) {
         bitField0_ |= 0x00000002;
         spinning_ = value;
         onChanged();
@@ -3801,12 +3799,12 @@ public final class PersonMove {
        *旋转
        * </pre>
        *
-       * <code>optional bool spinning = 2;</code>
+       * <code>optional int32 spinning = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearSpinning() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        spinning_ = false;
+        spinning_ = 0;
         onChanged();
         return this;
       }
@@ -5589,7 +5587,7 @@ public final class PersonMove {
       "move.Person.PhoneType:\004HOME\"+\n\tPhoneType" +
       "\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001\022\010\n\004WORK\020\002\"+\n\013Addr" +
       "essBook\022\034\n\006people\030\001 \003(\0132\014.move.Person\"U\n" +
-      "\010MoveInfo\022\013\n\003dir\030\001 \001(\010\022\020\n\010spinning\030\002 \001(\010" +
+      "\010MoveInfo\022\013\n\003dir\030\001 \001(\005\022\020\n\010spinning\030\002 \001(\005" +
       "\022\r\n\005ctime\030\003 \001(\003\022\r\n\005stime\030\004 \001(\003\022\014\n\004fire\030\005" +
       " \001(\t\">\n\014CSPlayerMove\022\020\n\010playerId\030\001 \001(\003\022\034" +
       "\n\004move\030\002 \001(\0132\016.move.MoveInfo\">\n\014SCPlayer" +

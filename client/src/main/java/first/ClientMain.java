@@ -23,6 +23,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioDatagramChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.CharsetUtil;
+import org.graalvm.compiler.lir.sparc.SPARCMove;
 
 import java.net.InetSocketAddress;
 import java.util.ArrayList;

@@ -27,7 +27,7 @@ public class FiberRoom extends Fiber<Void> implements Room {
     private List<Player> players;//房间内的人
     private String roomId;
     private SwapableQueuePair<PersonMove.CSPlayerMove> moves;
-    private final PersonMove.SCPlayerMove.Builder sc = PersonMove.SCPlayerMove.newBuilder();
+
     private boolean gameOver = false; //刚开始
 
 
@@ -55,21 +55,21 @@ public class FiberRoom extends Fiber<Void> implements Room {
                 if (null == msg) {
                     break;
                 }
+                PersonMove.SCPlayerMove.Builder sc = PersonMove.SCPlayerMove.newBuilder();
                 sc.setPlayerId(msg.getPlayerId());
+                msg.getMove().toBuilder().setStime(System.currentTimeMillis());
                 sc.setMove(msg.getMove());
-                long sTime = System.currentTimeMillis(); //服务器的时间
-                sc.getMove().toBuilder().setStime(sTime);
                 byte[] bytes = sc.build().toByteArray();
-                Protocal protocal = new Protocal(SCPlayerMove, bytes.length, 0, bytes);
 
                 for (Player player : this.players) {
+                    Protocal protocal = new Protocal(SCPlayerMove, bytes.length, 0, bytes);
                     protocal.setPid(player.getPlayerId());
                     Global.serverChannel.writeAndFlush(protocal);
                 }
 //                gameOver = true;
                 Logger.MLOG.info("msg" + msg + "发送成功");
             }
-            Strand.sleep(40);
+            Strand.sleep(20);
 
         }
         return null;

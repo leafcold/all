@@ -57,7 +57,7 @@ public class Test {
         if (StringUtils.equals(login.getUid(), "aaa")) {
             PersonLogin.SCPlayerLogin.Builder scPlayerLogin = PersonLogin.SCPlayerLogin.newBuilder();
             ArrayList<Long> arrayList = new ArrayList<>();
-            arrayList.add(123L);
+            arrayList.add(1L);
             scPlayerLogin.addAllPlayerId(arrayList);
             Protocal protocal = new Protocal((short) SCPlayerLogin, scPlayerLogin.build().toByteArray().length, 123L, scPlayerLogin.build().toByteArray());
             x.channel().writeAndFlush(protocal);
@@ -65,7 +65,7 @@ public class Test {
         if (StringUtils.equals(login.getUid(), "bbb")) {
             PersonLogin.SCPlayerLogin.Builder scPlayerLogin = PersonLogin.SCPlayerLogin.newBuilder();
             ArrayList<Long> arrayList = new ArrayList<>();
-            arrayList.add(1234L);
+            arrayList.add(2L);
             scPlayerLogin.addAllPlayerId(arrayList);
             Protocal protocal = new Protocal((short) SCPlayerLogin, scPlayerLogin.build().toByteArray().length, 1234L, scPlayerLogin.build().toByteArray());
             x.channel().writeAndFlush(protocal);

@@ -23,7 +23,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioDatagramChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.CharsetUtil;
-import org.graalvm.compiler.lir.sparc.SPARCMove;
+//import org.graalvm.compiler.lir.sparc.SPARCMove;
 
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ import static java.lang.Thread.*;
 
 public class ClientMain {
 
-    public static long playerId = System.currentTimeMillis();
+    public static long playerId = 1L;
     /// tcp
 //    public static void main(String[] args) throws Exception {
 //        String host = "172.16.2.24";

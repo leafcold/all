@@ -10,7 +10,6 @@ import first.com.protocol.Login.PersonLogin;
 import first.com.protocol.move.PersonMove;
 import first.core.log.Logger;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Queue;
 
@@ -49,7 +48,7 @@ public class FiberRoom extends Fiber<Void> implements Room {
         Logger.MLOG.info("#######room:[" + roomId + "]tick start########");
         while (!gameOver) {
             moves.swap();
-            Queue<PersonMove.CSPlayerMove> dealQueue = moves.first();
+            Queue<PersonMove.CSPlayerMove> dealQueue = moves.get();
             while (!dealQueue.isEmpty()) {
                 PersonMove.CSPlayerMove msg = dealQueue.poll();
                 if (null == msg) {
@@ -115,7 +114,7 @@ public class FiberRoom extends Fiber<Void> implements Room {
         if (gameOver) {
             return;//如果游戏结束，不再广播消息
         }
-        moves.second().add(move);
+        moves.add(move);
     }
 
 
